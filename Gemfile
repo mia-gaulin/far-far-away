@@ -18,3 +18,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'dotenv-rails'
 end
+
+group :test do
+  gem 'coveralls', require: false
+end
