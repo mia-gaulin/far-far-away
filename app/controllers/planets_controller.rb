@@ -14,6 +14,7 @@ class PlanetsController < ApplicationController
     a = apicall.gsub(", ", "&")
     b = a.gsub(",", "//")
     c = b.gsub("&", ", ")
-    d = c.gsub(/[{}\"]/,'').split('//').map{|h| h1,h2 = h.split(':'); {h1 => h2}}.reduce(:merge)
+    c.gsub(/[{}\"]/,'').split('//').map { |h| h1, h2 = h.split(':'); {
+      h1 => h2 } }.reduce(:merge)
   end
 end
