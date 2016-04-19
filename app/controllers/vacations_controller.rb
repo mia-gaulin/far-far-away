@@ -20,6 +20,11 @@ class VacationsController < ApplicationController
   private
 
   def vacation_params
-    params.require(:vacation).permit(:start_date, :end_date, :num_of_people, :vacationer).merge(planet: Planet.find(params[:planet_id]))
+    params.require(:vacation).permit(
+      :start_date, 
+      :end_date,
+      :num_of_people,
+      :vacationer
+    ).merge(planet: Planet.find(params[:planet_id]))
   end
 end
