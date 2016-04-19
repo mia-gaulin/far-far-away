@@ -19,6 +19,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'dotenv-rails'
+  gem 'valid_attribute'
+  gem 'shoulda'
 end
 
 group :test do
