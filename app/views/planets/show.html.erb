@@ -6,4 +6,16 @@ Location: <%= @planet.sector %> sector, <%= @planet.region %>
 
 <%= @planet.description %></h4>
 
+<div>
+  <% if @planet_data %>
+    Climate: <%= @planet_data["climate"].capitalize %>
+    Terrain: <%= @planet_data["terrain"].capitalize %>
+    Population: <%= @planet_data["population"] %>
+    Gravity: <%= @planet_data["gravity"] %>
+    Rotation period: <%= @planet_data["rotation_period"] %> standard days
+    Orbital period: <%= @planet_data["orbital_period"] %> standard days
+    Diameter: <%= @planet_data["diameter"] %> km
+  <% end %>
+</div>
+
 <%= link_to "Book travel", new_planet_vacation_path(@planet) %>
