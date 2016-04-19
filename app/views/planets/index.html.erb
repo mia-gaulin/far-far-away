@@ -2,7 +2,7 @@ Pick a destination
 
 <ul>
   <% @planets.each do |planet| %>
-    <li><%= planet.name %></li>
+    <li><%= link_to planet.name, planet_path(planet) %></li>
   <% end %>
 </ul>
 

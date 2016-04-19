@@ -1,0 +1,9 @@
+<h2><%= @planet.name %></h2>
+
+<h4>Language(s): <%= @planet.language %>
+
+Location: <%= @planet.sector %> sector, <%= @planet.region %>
+
+<%= @planet.description %></h4>
+
+<%= link_to "Book travel", new_planet_vacation_path(@planet) %>
