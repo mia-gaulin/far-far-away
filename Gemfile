@@ -11,6 +11,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'launchy'
 gem 'orderly'
 gem 'kaminari'
+gem 'swapi'
+gem 'tatooine'
 
 group :development, :test do
   gem 'capybara'
