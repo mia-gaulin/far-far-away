@@ -12,7 +12,7 @@ gem 'launchy'
 gem 'orderly'
 gem 'kaminari'
 gem 'swapi'
-gem 'tatooine'
+gem 'devise'
 
 group :development, :test do
   gem 'capybara'
