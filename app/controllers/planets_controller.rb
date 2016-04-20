@@ -8,6 +8,8 @@ class PlanetsController < ApplicationController
     @planet_data = api_parse
   end
 
+  private
+
   def api_parse
     @planet = Planet.find(params[:id])
     apicall = Swapi.get_planet @planet.id
