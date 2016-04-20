@@ -4,6 +4,12 @@ Rails.application.routes.draw do
     resources :vacations, only: [:new, :create]
   end
 
+  resources :planets, only: [:index, :show] do
+    resources :events, only: [:index, :show]
+  end
+
+  resources :vacations, only: [:show]
+
   get "/pages/:page" => "pages#show"
 
   root "pages#show", page: "home"

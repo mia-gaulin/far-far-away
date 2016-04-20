@@ -8,6 +8,7 @@
   </head>
   <body>
 
+  <div class="top-links">
     <a href="/pages/home">Home</a>
     <a href="/pages/about">About</a>
     <% if current_user.nil? %>
@@ -17,16 +18,17 @@
     <% if current_user %>
       <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
     <% end %>
+  </div>
 
-    <div class="row column">
-      <% flash.each do |name, msg| %>
-        <% if msg.is_a?(String) %>
-          <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
-            <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-          </div>
-        <% end %>
+  <div class="row column">
+    <% flash.each do |name, msg| %>
+      <% if msg.is_a?(String) %>
+        <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+          <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+        </div>
       <% end %>
-    </div>
+    <% end %>
+  </div>
 
   <%= yield %>
 

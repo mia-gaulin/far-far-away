@@ -1,4 +1,4 @@
-Planet.create(name: "Tatooine", language: "Basic, Bocce, Huttese, Jawaese, Tusken", sector: "Arkanis", region: "Outer Rim Territories", description: "Tatooine is a sparsely inhabited desert planet. It has two suns, which provide striking sunsets.")
+tatooine = Planet.create(name: "Tatooine", language: "Basic, Bocce, Huttese, Jawaese, Tusken", sector: "Arkanis", region: "Outer Rim Territories", description: "Tatooine is a sparsely inhabited desert planet. It has two suns, which provide striking sunsets.")
 Planet.create(name: "Alderaan", language: "Basic", sector: "Alderaan", region: "Core Worlds", description: "Alderaan was destroyed in 0 BBY by the first Death Star.")
 Planet.create(name: "Yavin IV", language: "Yuuzhan Vong, Massassi, Critokian, Basic", sector: "Gordian Reach", region: "Outer Rim Territories", description: "Yavin IV is one of the moons orbiting Yavin, a gas giant. During the Galactic Civil War, the Rebellion had a base on Yavin IV, which launched an attack that successfully destroyed the first Death Star.")
 Planet.create(name: "Hoth", language: "Basic", sector: "Anoat", region: "Outer Rim Territories", description: "Hoth is made up entirely of snow and ice, and is surrounded by an asteroid belt. The temperature drops to well-below freezing at nightfall.")
@@ -7,7 +7,7 @@ Planet.create(name: "Bespin", language: "Basic, Ugnaught", sector: "Anoat", regi
 Planet.create(name: "Endor", language: "Ewokese, Yuzzum", sector: "Moddell", region: "Outer Rim Territories", description: "placeholder")
 Planet.create(name: "Naboo", language: "Basic", sector: "Chommell", region: "Mid Rim", description: "placeholder")
 Planet.create(name: "Coruscant", language: "Basic, and thousands more", sector: "Corusca", region: "Core Worlds", description: "placeholder")
-Planet.create(name: "Kamino", language: "Basic, Kaminoan", sector: "Abrion", region: "Beyond the Outer Rim Territories", description: "placeholder")
+kamino = Planet.create(name: "Kamino", language: "Basic, Kaminoan", sector: "Abrion", region: "Beyond the Outer Rim Territories", description: "placeholder")
 Planet.create(name: "Geonosis", language: "Geonosian hive-mind", sector: "Arkanis", region: "Outer Rim Territories", description: "placeholder")
 Planet.create(name: "Utapau", language: "Basic", sector: "Tarabba", region: "Outer Rim Territories", description: "Utapau is a remote planet in the Outer Rim Territories which is full of massive sinkholes.")
 Planet.create(name: "Mustafar", language: "Mustafarian", sector: "Atravis", region: "Outer Rim Territories", description: "Mustafar is an incredibly hot world, which holds many valuable minerals mined by the Techno Union. Due to the planet's surface being made up entirely of lava, all buildings are held up by gravity supports.")
@@ -59,3 +59,6 @@ Planet.create(name: "Eriadu", language: "Basic", sector: "Seswenna", region: "Ou
 # Planet.create(name: "Kalee", )
 # Planet.create(name: "Umbara", )
 # Planet.create(name: "Jakku", )
+
+Event.create(name: "Podracing", location: "Mos Espa Grand Arena", description: "Contestants fly at breakneck speed in this very exciting, very dangerous sport.", planet: tatooine)
+Event.create(name: "Tour the Cloning Facilities", location: "Tipoca City", description: "During the Clone Wars, Tipoca City was a major base for the Grand Army of the Republic, and was the location of the cloning facilitaties that created the army.", planet: kamino)

@@ -2,10 +2,7 @@ require 'rails_helper'
 
 feature "User authentication" do
   anakin = FactoryGirl.create(:user)
-
-  let(:skywalker) do
-    FactoryGirl.create(:user)
-  end
+  let(:skywalker) { FactoryGirl.create(:user) }
 
   scenario "successful sign up" do
     visit root_path
