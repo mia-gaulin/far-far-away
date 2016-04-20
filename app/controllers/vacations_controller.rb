@@ -4,13 +4,18 @@ class VacationsController < ApplicationController
     @vacation = Vacation.new
   end
 
+  def show
+    @vacation = Vacation.find(params[:id])
+    @planet = @vacation.planet
+  end
+
   def create
     @vacation = Vacation.new(vacation_params)
     @planet = @vacation.planet
 
     if @vacation.save
       flash[:notice] = "Vacation booked successfully!"
-      redirect_to planet_path(@planet)
+      redirect_to vacation_path(@vacation)
     else
       flash[:error] = @vacation.errors.full_messages.join(". ")
       render :new

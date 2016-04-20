@@ -3,6 +3,7 @@ require 'rails_helper'
 feature "visitor sees details for a planet" do
   let!(:tatooine) { FactoryGirl.create(:planet) }
   let(:skywalker) { FactoryGirl.create(:vacation) }
+  let!(:anakin) { FactoryGirl.create(:user) }
 
   scenario "clicks link and is taken to show page for planet" do
     visit planets_path
@@ -41,5 +42,19 @@ feature "visitor sees details for a planet" do
     click_button "Submit"
 
     expect(page).to have_content "Vacation booked successfully!"
+  end
+
+  scenario "if user is signed in, form is pre-filled with their name" do
+    visit root_path
+    click_link "Sign In"
+    fill_in "Email", with: anakin.email
+    fill_in "Password", with: anakin.password
+    click_button "Log in"
+
+    visit planets_path
+    click_link tatooine.name
+    click_link "Book travel"
+
+    expect(page).to have_selector("input[value='Skywalker']")
   end
 end

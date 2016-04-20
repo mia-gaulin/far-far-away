@@ -1,0 +1,7 @@
+<h2>Events on <%= @planet.name %></h2>
+
+<div>
+  <% @events.each do |e| %>
+    <li><%= link_to e.name, event_path(e) %></li>
+  <% end %>
+</div>
