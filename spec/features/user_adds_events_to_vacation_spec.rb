@@ -20,7 +20,7 @@ feature "once a vacation is booked user may add an itinerary" do
   end
 
   scenario "views list of events available for planet" do
-    podracing = FactoryGirl.create(:event)
+    FactoryGirl.create(:event)
 
     visit vacation_path(skywalker)
     click_link "Build an Itinerary"
