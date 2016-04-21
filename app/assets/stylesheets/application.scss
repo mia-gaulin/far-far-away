@@ -13,7 +13,7 @@
  *= require_self
  */
 
- @import "bourbon";
+@import "bourbon";
 
 $orange: #f8b195;
 $pink: #f67280;
@@ -21,6 +21,8 @@ $mauve: #c06c84;
 $purple: #6c5b7b;
 $blue: #355c7d;
 $font-sans: "Copperplate", "Copperplate Gothic Light", sans-serif;
+$box: rgba(70, 20, 25, 0.3);
+$white: #ffffff;
 
 body {
   height: 100%;
@@ -36,19 +38,79 @@ h1 {
   padding-left: 20px;
 }
 
+h2 {
+  color: $purple;
+  padding-left: 30px;
+}
+
+h3 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.planet-desc {
+  font-size: 14pt;
+  padding: 5px;
+  padding-left: 20px;
+}
+
+.link {
+  font-size: 14pt;
+  padding: 10px;
+  text-align: center;
+
+  a {
+    color: darken($white, 15%);
+  }
+
+}
+
+.planet {
+  padding: 5px;
+  padding-left: 5px;
+
+  a {
+    color: darken($blue, 10%);
+  }
+
+}
+
+.apicall {
+  font-size: 12pt;
+}
+
+.pagination {
+  padding-left: 10px;
+
+  a {
+    color: $white;
+
+    &:hover {
+      color: $pink;
+    }
+
+  }
+
+  &:page.current {
+    color: $orange;
+  }
+
+}
+
 .top-links {
   list-style-type: none;
   margin: 10px;
   padding: 0;
   overflow: hidden;
   background-color: transparent;
+
   li {
-    float: left;
+    float: right;
   }
 
   li a {
     display: block;
-    color: white;
+    color: $white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -63,93 +125,146 @@ h1 {
   }
 
   li:last-child {
-    border-right: none;
+    border-left: 0;
+  }
+
+  li:first-child {
+    border-right: 0;
   }
 }
 
-
 .cards {
- display: flex;
- flex-wrap: wrap;
- justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card {
- $base-border-color: darken(transparent, 10%);
- $base-border-radius: 3px !default;
- $base-background-color: white !default;
- $base-spacing: 1.5em !default;
- $action-color: #477DCA !default;
- $dark-gray: #333 !default;
- $base-font-color: $dark-gray !default;
- $card-border-color: $base-border-color;
- $card-border: 1px solid $card-border-color;
- $card-background: lighten($card-border-color, 10%);
- $card-header-background: $card-background;
- $card-margin: 1em;
- $card-image-hover-opacity: 0.8;
- $card-image-hover-color: white;
+  $base-border-color: darken(transparent, 10%);
+  $base-border-radius: 3px !default;
+  $base-background-color: $white !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $card-border-color: $base-border-color;
+  $card-border: 1px solid $card-border-color;
+  $card-background: lighten($card-border-color, 10%);
+  $card-header-background: $card-background;
+  $card-margin: 1em;
+  $card-image-hover-opacity: 0.8;
+  $card-image-hover-color: $white;
 
- background-color: $card-background;
- border: $card-border;
- border-radius: $base-border-radius;
- box-shadow: 0 2px 4px darken($base-background-color, 10%);
- flex-basis: 15em;
- flex-grow: 1;
- margin: 0 $card-margin $base-spacing $card-margin;
- position: relative;
- transition: all 0.2s ease-in-out;
+  background-color: $card-background;
+  border: $card-border;
+  border-radius: $base-border-radius;
+  box-shadow: 0 2px 4px darken($base-background-color, 10%);
+  flex-basis: 15em;
+  flex-grow: 1;
+  margin: 0 $card-margin $base-spacing;
+  position: relative;
+  transition: all 0.2s ease-in-out;
 
- .card-image {
-   background-color: $card-image-hover-color;
-   height: 150px;
-   max-height: 150px;
-   overflow: hidden;
+  .card-image {
+    background-color: $card-image-hover-color;
+    height: 150px;
+    max-height: 150px;
+    overflow: hidden;
 
-   img {
-     @include border-top-radius($base-border-radius);
-     opacity: 1;
-     transition: all 0.2s ease-in-out;
-     width: 100%;
-   }
- }
+    img {
+      @include border-top-radius($base-border-radius);
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+    }
+  }
 
- .card-header {
-   background-color: $card-header-background;
-   border-bottom: $card-border;
-   border-radius: $base-border-radius $base-border-radius 0 0;
-   font-weight: bold;
-   line-height: 1.5em;
-   padding: ($base-spacing / 3) ($base-spacing / 2);
-   transition: all 0.2s ease-in-out;
+  .card-header {
+    background-color: $card-header-background;
+    border-bottom: $card-border;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: ($base-spacing / 3) ($base-spacing / 2);
+    transition: all 0.2s ease-in-out;
 
-   a {
-     color: white;
-   }
- }
+    a {
+      color: $white;
+    }
+  }
 
- .card-copy {
-   font-size: 0.9em;
-   line-height: 1.5em;
-   padding: ($base-spacing / 2) ($base-spacing / 2);
+  .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: ($base-spacing / 2);
 
-   p {
-     margin: 0 0 ($base-spacing / 2);
-     color: darken(white, 20%);
-   }
- }
+    p {
+      margin: 0 0 ($base-spacing / 2);
+      color: darken($white, 20%);
+    }
+  }
 
- &:hover {
-   img {
-     opacity: $card-image-hover-opacity;
-   }
- }
+  &:hover {
+    img {
+      opacity: $card-image-hover-opacity;
+    }
+  }
 
- &:active {
-   background-color: $card-background;
+  &:active {
+    background-color: $card-background;
 
-   .card-header {
-     background-color: $card-background;
-   }
- }
+    .card-header {
+      background-color: $card-background;
+    }
+  }
 }
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  width: 75%;
+}
+
+.leftcolumn {
+  background: $box;
+  border-radius: 5px;
+  float: left;
+  margin: 5px;
+  min-height: 200px;
+  padding: 5px;
+  width: 45%;
+}
+
+.rightcolumn {
+  background: $box;
+  border-radius: 5px;
+  float: right;
+  margin: 5px;
+  min-height: 200px;
+  padding: 5px;
+  width: 45%;
+}
+
+.leftbottomcolumn {
+  background: $box;
+  border-radius: 5px;
+  float: left;
+  margin: 5px;
+  min-height: 200px;
+  padding: 5px;
+  width: 45%;
+}
+
+.rightbottomcolumn {
+  background: $box;
+  border-radius: 5px;
+  float: right;
+  margin: 5px;
+  min-height: 200px;
+  padding: 5px;
+  width: 45%;
+}
+
+.clear { clear: both;}

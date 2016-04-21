@@ -13,15 +13,15 @@
     </div>
 
     <div class="top-links">
-      <li><a href="/pages/home">Home</a></li>
-      <li><a href="/pages/about">About</a></li>
-      <% if current_user.nil? %>
-        <li><%= link_to "Sign Up", new_user_registration_path %></li>
-        <li><%= link_to "Sign In", new_user_session_path %></li>
-      <% end %>
       <% if current_user %>
-        <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+      <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
       <% end %>
+      <% if current_user.nil? %>
+      <li><%= link_to "Sign Up", new_user_registration_path %></li>
+      <li><%= link_to "Sign In", new_user_session_path %></li>
+      <% end %>
+      <li><a href="/pages/about">About</a></li>
+      <li><a href="/pages/home">Home</a></li>
     </div>
 
   <div class="row column">

@@ -1,8 +1,10 @@
-Pick a destination
+<h2>Pick a destination</h2>
 
 <ul class="planets-list">
   <% @planets.each do |planet| %>
-    <li><%= link_to planet.name, planet_path(planet) %></li>
+    <div class="planet">
+      <%= link_to planet.name, planet_path(planet) %>
+    </div>
   <% end %>
 </ul>
 
