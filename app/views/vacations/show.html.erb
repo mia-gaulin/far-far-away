@@ -1,3 +1,18 @@
-<%= @vacation.vacationer %>
+<h2><%= @vacation.vacationer %>'s <%= @vacation.planet.name %> Vacation</h2>
 
-<%= link_to "Build an Itinerary", planet_events_path(@planet) %>
+<div>
+  Destination: <%= @vacation.planet.name %>
+  Dates: <%= @vacation.start_date %> - <%= @vacation.end_date %>
+  Number of people: <%= @vacation.num_of_people %>
+</div>
+
+<div>
+  Points of Interest on <%= @vacation.planet.name %>
+  <% @landmarks.each do |l| %>
+    <li><%= l.name %></li>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "Build an Itinerary", planet_events_path(@planet) %>
+</div>

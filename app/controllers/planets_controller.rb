@@ -6,6 +6,7 @@ class PlanetsController < ApplicationController
   def show
     @planet = Planet.find(params[:id])
     @planet_data = api_parse
+    @landmarks = Landmark.where(planet: @planet)
   end
 
   private
