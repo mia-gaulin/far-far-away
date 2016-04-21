@@ -1,6 +1,10 @@
 class PlanetsController < ApplicationController
   def index
-    @planets = Planet.order(:name).page params[:page]
+    if params[:query]
+      @planets = Planet.search(params[:query]).order(:name)
+    else
+      @planets = Planet.order(:name).page params[:page]
+    end
   end
 
   def show

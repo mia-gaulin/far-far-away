@@ -10,5 +10,10 @@ class Planet < ActiveRecord::Base
   validates :region, presence: true
   validates :description, presence: true
 
+  include PgSearch
+  pg_search_scope :search_by_all, against: [:name, :language, :sector, :region]
+
+  scope :search, -> (query) { search_by_all(query) if query.present? }
+
   paginates_per 10
 end
