@@ -161,7 +161,7 @@ h3 {
   box-shadow: 0 2px 4px darken($base-background-color, 10%);
   flex-basis: 15em;
   flex-grow: 1;
-  margin: 0 $card-margin $base-spacing $card-margin;
+  margin: 0 $card-margin $base-spacing;
   position: relative;
   transition: all 0.2s ease-in-out;
 
@@ -196,7 +196,7 @@ h3 {
   .card-copy {
     font-size: 0.9em;
     line-height: 1.5em;
-    padding: ($base-spacing / 2) ($base-spacing / 2);
+    padding: ($base-spacing / 2);
 
     p {
       margin: 0 0 ($base-spacing / 2);
