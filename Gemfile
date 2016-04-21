@@ -17,6 +17,7 @@ gem 'swapi'
 gem 'devise'
 gem 'bourbon'
 gem 'neat'
+gem 'puma'
 
 group :development, :test do
   gem 'capybara'
