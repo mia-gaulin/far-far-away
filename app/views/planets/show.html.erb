@@ -1,10 +1,12 @@
-<h2><%= @planet.name %></h2>
+<div>
+  <h2><%= @planet.name %></h2>
 
-<h4>Language(s): <%= @planet.language %>
+  <h4>Language(s): <%= @planet.language %>
 
-Location: <%= @planet.sector %> sector, <%= @planet.region %>
+  Location: <%= @planet.sector %> sector, <%= @planet.region %>
 
-<%= @planet.description %></h4>
+  <%= @planet.description %></h4>
+</div>
 
 <div>
   <% if @planet_data %>
@@ -18,4 +20,15 @@ Location: <%= @planet.sector %> sector, <%= @planet.region %>
   <% end %>
 </div>
 
-<%= link_to "Book travel", new_planet_vacation_path(@planet) %>
+<div>
+  <h4>Points of Interest</h4>
+  <div>
+    <% @landmarks.each do |l| %>
+      <li><%= l.name %></li>
+    <% end %>
+  </div>
+</div>
+
+<div>
+  <%= link_to "Book travel", new_planet_vacation_path(@planet) %>
+</div>

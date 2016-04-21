@@ -1,6 +1,7 @@
 class Planet < ActiveRecord::Base
   has_many :vacations
   has_many :events
+  has_many :landmarks
 
   validates :name, presence: true
   validates :name, uniqueness: { case_sensitive: false }

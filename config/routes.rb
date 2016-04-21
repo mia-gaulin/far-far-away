@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   end
 
   resources :planets, only: [:index, :show] do
-    resources :events, only: [:index, :show]
+    resources :events, only: [:index]
   end
 
   resources :vacations, only: [:show]
+
+  resources :events, only: [:show]
 
   get "/pages/:page" => "pages#show"
 
