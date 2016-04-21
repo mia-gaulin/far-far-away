@@ -15,6 +15,8 @@ gem 'orderly'
 gem 'kaminari'
 gem 'swapi'
 gem 'devise'
+gem 'bourbon'
+gem 'neat'
 
 group :development, :test do
   gem 'capybara'

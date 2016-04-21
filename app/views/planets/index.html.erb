@@ -1,6 +1,6 @@
 Pick a destination
 
-<ul>
+<ul class="planets-list">
   <% @planets.each do |planet| %>
     <li><%= link_to planet.name, planet_path(planet) %></li>
   <% end %>
