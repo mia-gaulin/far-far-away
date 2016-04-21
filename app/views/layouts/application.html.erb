@@ -8,17 +8,21 @@
   </head>
   <body>
 
-  <div class="top-links">
-    <a href="/pages/home">Home</a>
-    <a href="/pages/about">About</a>
-    <% if current_user.nil? %>
-      <%= link_to "Sign Up", new_user_registration_path %>
-      <%= link_to "Sign In", new_user_session_path %>
-    <% end %>
-    <% if current_user %>
-      <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-    <% end %>
-  </div>
+    <div class="header">
+      <h1>Far, Far Away Travel</h1>
+    </div>
+
+    <div class="top-links">
+      <li><a href="/pages/home">Home</a></li>
+      <li><a href="/pages/about">About</a></li>
+      <% if current_user.nil? %>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+      <% end %>
+      <% if current_user %>
+        <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+      <% end %>
+    </div>
 
   <div class="row column">
     <% flash.each do |name, msg| %>

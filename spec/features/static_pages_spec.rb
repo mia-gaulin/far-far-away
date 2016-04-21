@@ -6,7 +6,7 @@ feature "static pages" do
   scenario "user visits root path" do
     visit root_path
 
-    expect(page).to have_content "Home Page"
+    expect(page).to have_content "Far, Far Away Travel"
     expect(page).to_not have_content tatooine.name
   end
 
