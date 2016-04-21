@@ -3,7 +3,8 @@ require 'rails_helper'
 feature 'user searches for a planet' do
   let!(:tatooine) { FactoryGirl.create(:planet) }
   let!(:alderaan) { FactoryGirl.create(:planet, name: "Alderaan") }
-  let!(:endor) { Planet.create(name: "Endor", language: "none", sector: "herp", region: "derp", description: "lol") }
+  let!(:endor) { Planet.create(name: "Endor", language: "none",
+    sector: "herp", region: "derp", description: "lol") }
 
   scenario 'searches successfully' do
     visit planets_path
