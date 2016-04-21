@@ -60,10 +60,6 @@ Planet.create(name: "Eriadu", language: "Basic", sector: "Seswenna", region: "Ou
 # Planet.create(name: "Umbara", )
 # Planet.create(name: "Jakku", )
 
-# Event.create(name: "Podracing", location: "Mos Espa Grand Arena", description: "Contestants fly at breakneck speed in this very exciting, very dangerous sport.", planet: tatooine)
-# Event.create(name: "Tour the Cloning Facilities", location: "Tipoca City", description: "During the Clone Wars, Tipoca City was a major base for the Grand Army of the Republic, and was the location of the cloning facilitaties that created the army.", planet: kamino)
-# Event.create(name: "Gladiator Fights", location: "Petranaki Arena", description: "Watch combatants battle to the death with fearsome monsters!", planet: geonosis)
-
 Landmark.create(name: "Anchorhead Pass", planet: tatooine)
 Landmark.create(name: "Beggar's Canyon", planet: tatooine)
 Landmark.create(name: "Dune Sea", planet: tatooine)
