@@ -13,7 +13,7 @@
  *= require_self
  */
 
- @import "bourbon";
+@import "bourbon";
 
 $orange: #f8b195;
 $pink: #f67280;
@@ -36,6 +36,68 @@ h1 {
   padding-left: 20px;
 }
 
+h2 {
+  padding-left: 30px;
+  color: $purple;
+}
+
+h3 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+h4 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.planet-desc {
+  padding: 5px;
+  padding-left: 20px;
+  font-size: 14pt;
+}
+
+.link {
+  padding: 10px;
+  a {
+    color: darken(white, 15%);
+  }
+}
+
+.box {
+  width: 500px;
+  border: solid $blue 2px;
+  // padding-left: 20px;
+  margin: 20px;
+}
+
+.planet {
+  padding: 5px;
+  padding-left: 5px;
+  a {
+    color: darken($blue, 10%);
+  }
+}
+
+.apicall {
+  padding: 5px;
+  padding-left: 20px;
+  font-size: 12pt;
+}
+
+.pagination {
+  padding-left: 10px;
+  a {
+    color: white;
+    &:hover {
+      color: $pink;
+    }
+  }
+  &:page.current {
+    color: $orange;
+  }
+}
+
 .top-links {
   list-style-type: none;
   margin: 10px;
@@ -43,7 +105,7 @@ h1 {
   overflow: hidden;
   background-color: transparent;
   li {
-    float: left;
+    float: right;
   }
 
   li a {
@@ -63,6 +125,10 @@ h1 {
   }
 
   li:last-child {
+    border-left: none;
+  }
+
+  li:first-child {
     border-right: none;
   }
 }
@@ -153,3 +219,43 @@ h1 {
    }
  }
 }
+
+#container {
+  position: relative;
+  width: 75%;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+#leftcolumn {
+  width: 45%;
+  min-height: 200px;
+  float: left;
+  margin: 5px;
+  padding: 5px;
+  background: rgba(54, 25, 25, .5);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#rightcolumn {
+  width: 45%;
+  min-height: 200px;
+  float: right;
+  margin: 5px;
+  padding: 5px;
+  background: rgba(54, 25, 25, .5);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#centercolumn {
+  width: 80%;
+  float: center;
+  margin: 5px;
+  padding: 5px;
+  background: rgba(54, 25, 25, .5);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.clear { clear: both;}

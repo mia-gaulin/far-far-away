@@ -1,34 +1,59 @@
-<div>
-  <h2><%= @planet.name %></h2>
+<h2><%= @planet.name %></h2>
 
-  <h4>Language(s): <%= @planet.language %>
+<h3><%= @planet.description %></h3>
 
-  Location: <%= @planet.sector %> sector, <%= @planet.region %>
-
-  <%= @planet.description %></h4>
+<div id="container">
+  <div id="leftcolumn">
+    <div class="planet-desc">
+      Language(s): <%= @planet.language %>
+    </div>
+    <div class="planet-desc">
+      Location: <%= @planet.sector %> sector, <%= @planet.region %>
+    </div>
+  </div>
+  <div id="rightcolumn">
+    <div class="apicall">
+      <% if @planet_data %>
+        <div>
+          Climate: <%= @planet_data["climate"].capitalize %>
+        </div>
+        <div>
+          Terrain: <%= @planet_data["terrain"].capitalize %>
+        </div>
+        <div>
+          Population: <%= @planet_data["population"] %>
+        </div>
+        <div>
+          Gravity: <%= @planet_data["gravity"] %>
+        </div>
+        <div>
+          Rotation period: <%= @planet_data["rotation_period"] %> standard days
+        </div>
+        <div>
+          Orbital period: <%= @planet_data["orbital_period"] %> standard days
+        </div>
+        <div>
+          Diameter: <%= @planet_data["diameter"] %> km
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="clear">
+  </div>
 </div>
-
-<div>
-  <% if @planet_data %>
-    Climate: <%= @planet_data["climate"].capitalize %>
-    Terrain: <%= @planet_data["terrain"].capitalize %>
-    Population: <%= @planet_data["population"] %>
-    Gravity: <%= @planet_data["gravity"] %>
-    Rotation period: <%= @planet_data["rotation_period"] %> standard days
-    Orbital period: <%= @planet_data["orbital_period"] %> standard days
-    Diameter: <%= @planet_data["diameter"] %> km
-  <% end %>
-</div>
-
-<div>
-  <h4>Points of Interest</h4>
-  <div>
-    <% @landmarks.each do |l| %>
-      <li><%= l.name %></li>
-    <% end %>
+<div id="container">
+  <div id="centercolumn" style="min-height: 100px;">
+    <h4>Points of Interest</h4>
+      <div>
+        <% @landmarks.each do |l| %>
+          <li><%= l.name %></li>
+        <% end %>
+      </div>
+  </div>
+  <div class="clear">
   </div>
 </div>
 
-<div>
+<div class="link">
   <%= link_to "Book travel", new_planet_vacation_path(@planet) %>
 </div>
