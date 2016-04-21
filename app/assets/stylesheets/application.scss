@@ -37,8 +37,8 @@ h1 {
 }
 
 h2 {
-  padding-left: 30px;
   color: $purple;
+  padding-left: 30px;
 }
 
 h3 {
@@ -47,15 +47,15 @@ h3 {
 }
 
 .planet-desc {
+  font-size: 14pt;
   padding: 5px;
   padding-left: 20px;
-  font-size: 14pt;
 }
 
 .link {
+  font-size: 14pt;
   padding: 10px;
   text-align: center;
-  font-size: 14pt;
   a {
     color: darken(white, 15%);
   }
@@ -208,57 +208,55 @@ h3 {
  }
 }
 
-#container {
-  position: relative;
-  width: 75%;
+.container {
   margin-left: auto;
   margin-right: auto;
+  position: relative;
   text-align: center;
+  width: 75%;
 }
-#leftcolumn {
-  width: 45%;
-  min-height: 200px;
+.leftcolumn {
+  background: rgba(70, 20, 25, .3);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
   float: left;
   margin: 5px;
-  padding: 5px;
-  background: rgba(70, 20, 25, .3);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-#rightcolumn {
-  width: 45%;
   min-height: 200px;
+  padding: 5px;
+  width: 45%;
+}
+.rightcolumn {
+  background: rgba(70, 20, 25, .3);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
   float: right;
   margin: 5px;
-  padding: 5px;
-  background: rgba(70, 20, 25, .3);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-#leftbottomcolumn {
-  width: 45%;
   min-height: 200px;
-  text-align: center;
+  padding: 5px;
+  width: 45%;
+}
+.leftbottomcolumn {
+  background: rgba(70, 20, 25, .3);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
   float: left;
   margin: 5px;
-  padding: 5px;
-  background: rgba(70, 20, 25, .3);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-#rightbottomcolumn {
-  width: 45%;
   min-height: 200px;
-  text-align: center;
+  padding: 5px;
+  width: 45%;
+}
+.rightbottomcolumn {
+  background: rgba(70, 20, 25, .3);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
   float: right;
   margin: 5px;
+  min-height: 200px;
   padding: 5px;
-  background: rgba(70, 20, 25, .3);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  width: 45%;
 }
 .clear { clear: both;}

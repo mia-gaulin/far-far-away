@@ -6,8 +6,8 @@
   <%= link_to "Book travel", new_planet_vacation_path(@planet) %>
 </div>
 
-<div id="container">
-  <div id="leftcolumn">
+<div class="container">
+  <div class="leftcolumn">
     <h4>What to know before you travel</h4>
     <div class="planet-desc">
       Language(s): <%= @planet.language %>
@@ -16,7 +16,7 @@
       Location: <%= @planet.sector %> sector, <%= @planet.region %>
     </div>
   </div>
-  <div id="rightcolumn">
+  <div class="rightcolumn">
     <div class="apicall">
       <h4>About <%= @planet.name %></h4>
       <% if @planet_data %>
@@ -47,8 +47,8 @@
   <div class="clear">
   </div>
 </div>
-<div id="container">
-  <div id="leftbottomcolumn">
+<div class="container">
+  <div class="leftbottomcolumn">
     <h4>Points of Interest</h4>
       <div>
         <% @landmarks.each do |l| %>
@@ -56,7 +56,7 @@
         <% end %>
       </div>
   </div>
-  <div id="rightbottomcolumn">
+  <div class="rightbottomcolumn">
     <h4>Events</h4>
       <div>
         lol filler
