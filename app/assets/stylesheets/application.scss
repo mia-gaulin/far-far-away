@@ -54,10 +54,20 @@ h3 {
   padding-left: 20px;
 }
 
-.link {
+.vacation-link {
   font-size: 14pt;
   padding: 10px;
   text-align: center;
+
+  a {
+    color: darken($white, 15%);
+  }
+
+}
+
+.link {
+  font-size: 14pt;
+  padding: 10px;
 
   a {
     color: darken($white, 15%);
@@ -77,6 +87,16 @@ h3 {
 
 .apicall {
   font-size: 12pt;
+}
+
+.field {
+  padding: 5px;
+  text-align: center;
+}
+
+.actions {
+  padding: 5px;
+  text-align: center;
 }
 
 .pagination {

@@ -2,7 +2,7 @@
 
 <h3><%= @planet.description %></h3>
 
-<div class="link">
+<div class="vacation-link">
   <%= link_to "Book travel", new_planet_vacation_path(@planet) %>
 </div>
 
@@ -64,4 +64,8 @@
   </div>
   <div class="clear">
   </div>
+</div>
+
+<div class="link">
+  <%= link_to "Go Back", planets_path %>
 </div>
