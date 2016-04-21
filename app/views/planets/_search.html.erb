@@ -1,0 +1,7 @@
+<p>
+  <%= form_tag planets_path, method: :get do %>
+    <%= label_tag :query, "" %>
+    <%= text_field_tag :query %>
+    <%= submit_tag "Search" %>
+  <% end %>
+</p>

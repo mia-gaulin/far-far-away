@@ -57,4 +57,17 @@ feature "visitor sees details for a planet" do
 
     expect(page).to have_selector("input[value='Skywalker']")
   end
+
+  scenario "unsuccessful booking" do
+    visit planets_path
+    click_link tatooine.name
+    click_link "Book travel"
+
+    fill_in "Start Date", with: skywalker.start_date
+    fill_in "End Date", with: skywalker.end_date
+    fill_in "Number of People", with: skywalker.num_of_people
+    click_button "Submit"
+
+    expect(page).to have_content "Vacationer can't be blank"
+  end
 end

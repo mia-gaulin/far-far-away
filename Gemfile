@@ -18,6 +18,7 @@ gem 'devise'
 gem 'bourbon'
 gem 'neat'
 gem 'puma'
+gem 'pg_search'
 
 group :development, :test do
   gem 'capybara'

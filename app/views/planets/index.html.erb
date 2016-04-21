@@ -8,4 +8,6 @@
   <% end %>
 </ul>
 
-<%= paginate @planets %>
+<% if !params[:query] %>
+  <%= paginate @planets %>
+<% end %>
