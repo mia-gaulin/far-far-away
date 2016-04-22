@@ -40,6 +40,14 @@ class VacationsController < ApplicationController
     end
   end
 
+  def destroy
+    @vacation = Vacation.find(params[:id])
+    @planet = @vacation.planet
+    @vacation.destroy
+    flash[:notice] = "Your vacation has been cancelled."
+    redirect_to planets_path
+  end
+
   private
 
   def vacation_params

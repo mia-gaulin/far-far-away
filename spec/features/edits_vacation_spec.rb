@@ -27,13 +27,14 @@ feature "user views and edits their vacation" do
     expect(page).to have_link "Edit"
     click_link "Edit"
 
-    fill_in "Number of People", with: "4"
+    fill_in "End Date", with: "2017-05-10"
     click_button "Update Vacation"
 
-    expect(page).to have_content "4"
+    expect(page).to have_content "2017-05-10"
     expect(page).to have_content skywalker.start_date
-    expect(page).to_not have_content skywalker.num_of_people
+    expect(page).to_not have_content skywalker.end_date
     expect(page).to have_content "Vacation updated successfully!"
+    expect(current_path).to eq vacation_path(skywalker)
   end
 
   scenario "user updates vacation with incorrect info" do
