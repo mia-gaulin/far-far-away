@@ -34,6 +34,7 @@ feature "user views and edits their vacation" do
     expect(page).to have_content skywalker.start_date
     expect(page).to_not have_content skywalker.num_of_people
     expect(page).to have_content "Vacation updated successfully!"
+    expect(current_path).to eq vacation_path(skywalker)
   end
 
   scenario "user updates vacation with incorrect info" do
