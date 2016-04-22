@@ -10,8 +10,6 @@ Rails.application.routes.draw do
 
   resources :vacations, only: [:show, :edit, :update, :destroy]
 
-  resources :events, only: [:show]
-
   get "/pages/:page" => "pages#show"
 
   root "pages#show", page: "home"
