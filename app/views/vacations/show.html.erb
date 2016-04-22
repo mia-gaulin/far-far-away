@@ -4,6 +4,7 @@
   Destination: <%= @vacation.planet.name %>
   Dates: <%= @vacation.start_date %> - <%= @vacation.end_date %>
   Number of people: <%= @vacation.num_of_people %>
+  <%= link_to "Edit", edit_vacation_path(@vacation) %>
 </div>
 
 <div>

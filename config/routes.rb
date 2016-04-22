@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :events, only: [:index]
   end
 
-  resources :vacations, only: [:show]
+  resources :vacations, only: [:show, :edit, :update]
 
   resources :events, only: [:show]
 
