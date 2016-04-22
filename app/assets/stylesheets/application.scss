@@ -48,6 +48,12 @@ h3 {
   padding-right: 40px;
 }
 
+.about {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 .planet-desc {
   font-size: 14pt;
   padding: 5px;
@@ -97,6 +103,15 @@ h3 {
 .actions {
   padding: 5px;
   text-align: center;
+}
+
+.form {
+  padding: 5px;
+  text-align: center;
+}
+
+.flash {
+  padding: 10px;
 }
 
 .pagination {
