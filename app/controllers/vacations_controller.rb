@@ -23,6 +23,23 @@ class VacationsController < ApplicationController
     end
   end
 
+  def edit
+    @vacation = Vacation.find(params[:id])
+    @planet = @vacation.planet
+  end
+
+  def update
+    @vacation = Vacation.find(params[:id])
+    @planet = @vacation.planet
+    if @vacation.update(edit_params)
+      flash[:notice] = "Vacation updated successfully!"
+      redirect_to vacation_path(@vacation)
+    else
+      flash[:alert] = @vacation.errors.full_messages.join(". ")
+      render :edit
+    end
+  end
+
   private
 
   def vacation_params
@@ -32,5 +49,14 @@ class VacationsController < ApplicationController
       :num_of_people,
       :vacationer
     ).merge(planet: Planet.find(params[:planet_id]))
+  end
+
+  def edit_params
+    params.require(:vacation).permit(
+      :start_date,
+      :end_date,
+      :num_of_people,
+      :vacationer
+    )
   end
 end
