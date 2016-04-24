@@ -14,15 +14,18 @@
  */
 
 @import "bourbon";
+@import "modules/mixins";
 
 $orange: #f8b195;
 $pink: #f67280;
 $mauve: #c06c84;
 $purple: #6c5b7b;
 $blue: #355c7d;
+$grey: #d3d3d3;
 $font-sans: "Copperplate", "Copperplate Gothic Light", sans-serif;
 $box: rgba(70, 20, 25, 0.3);
 $white: #ffffff;
+$black: #000000;
 
 body {
   height: 100%;
@@ -92,7 +95,7 @@ h3 {
   padding-left: 5px;
 
   a {
-    color: darken($blue, 10%);
+    color: $grey;
   }
 
 }
@@ -141,6 +144,10 @@ h3 {
 .search {
   float: left;
   padding-left: 60px;
+
+  a {
+    color: $white;
+  }
 }
 
 .top-links {
@@ -186,17 +193,17 @@ h3 {
 }
 
 .card {
-  $base-border-color: darken(transparent, 10%);
+  $base-border-color: rgba($white, 0.3);
   $base-border-radius: 3px !default;
   $base-background-color: $white !default;
   $base-spacing: 1.5em !default;
   $action-color: #477DCA !default;
-  $dark-gray: #333 !default;
+  $dark-gray: $grey;
   $base-font-color: $dark-gray !default;
   $card-border-color: $base-border-color;
   $card-border: 1px solid $card-border-color;
   $card-background: lighten($card-border-color, 10%);
-  $card-header-background: $card-background;
+  $card-header-background: transparent;
   $card-margin: 1em;
   $card-image-hover-opacity: 0.8;
   $card-image-hover-color: $white;
@@ -204,7 +211,7 @@ h3 {
   background-color: $card-background;
   border: $card-border;
   border-radius: $base-border-radius;
-  box-shadow: 0 2px 4px darken($base-background-color, 10%);
+  box-shadow: 0 2px 4px rgba($black, 0.4);
   flex-basis: 15em;
   flex-grow: 1;
   margin: 0 $card-margin $base-spacing;
@@ -246,7 +253,7 @@ h3 {
 
     p {
       margin: 0 0 ($base-spacing / 2);
-      color: darken($white, 20%);
+      color: $base-font-color;
     }
   }
 
