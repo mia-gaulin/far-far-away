@@ -9,3 +9,27 @@
 @mixin flex-container-x($wrap) {
   @include flex-container-base(row, $wrap);
 }
+
+@mixin flex-container-y($wrap) {
+  @include flex-container-base(column, $wrap);
+}
+
+@mixin flex-child-fluid {
+  @include flex(1 1 auto);
+}
+
+@mixin flex-child-static($size) {
+  @include flex(1 1 $size);
+}
+
+@mixin card-background {
+  $base-border-color: rgba(white, 0.3);
+  $base-border-radius: 3px !default;
+  $card-border-color: $base-border-color;
+  $card-border: 1px solid $card-border-color;
+  $card-background: lighten($card-border-color, 10%);
+  background-color: $card-background;
+  border: $card-border;
+  border-radius: $base-border-radius;
+  box-shadow: 0 2px 4px rgba($black, 0.4);
+}

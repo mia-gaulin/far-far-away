@@ -27,23 +27,43 @@ $box: rgba(70, 20, 25, 0.3);
 $white: #ffffff;
 $black: #000000;
 
+* {
+  box-model: border-box;
+}
+
+html,
 body {
   height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+body {
   margin: 0;
   background: linear-gradient($orange, $pink, $mauve, $purple, $blue);
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: $font-sans;
+
+  div.layout-container {
+    @include flex-container-y(nowrap);
+    width: 80%;
+    margin: 0 auto;
+
+    @import "components/header";
+  }
+
+  div.yield {
+    @include flex-container-y(wrap);
+  }
 }
 
 h1 {
   font-size: 36pt;
-  padding-left: 20px;
 }
 
 h2 {
   color: $purple;
-  padding-left: 30px;
 }
 
 h3 {
@@ -82,7 +102,6 @@ h3 {
 
 .link {
   font-size: 14pt;
-  padding: 10px;
 
   a {
     color: darken($white, 15%);
@@ -119,10 +138,6 @@ h3 {
   text-align: center;
 }
 
-.flash {
-  padding: 10px;
-}
-
 .pagination {
   padding-left: 10px;
 
@@ -139,51 +154,6 @@ h3 {
     color: $orange;
   }
 
-}
-
-.search {
-  float: left;
-  padding-left: 60px;
-
-  a {
-    color: $white;
-  }
-}
-
-.top-links {
-  list-style-type: none;
-  margin: 10px;
-  padding: 0;
-  overflow: hidden;
-  background-color: transparent;
-
-  li {
-    float: right;
-  }
-
-  li a {
-    display: block;
-    color: $white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-
-  li a:hover {
-    background-color: $pink;
-  }
-
-  li {
-    border-right: 1px solid #bbb;
-  }
-
-  li:last-child {
-    border-left: 0;
-  }
-
-  li:first-child {
-    border-right: 0;
-  }
 }
 
 .cards {
@@ -229,6 +199,7 @@ h3 {
       opacity: 1;
       transition: all 0.2s ease-in-out;
       width: 100%;
+      height: 100%;
     }
   }
 
@@ -272,52 +243,42 @@ h3 {
   }
 }
 
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
+.top {
+  @include card-background;
+  @include flex-container-x(nowrap);
   text-align: center;
-  width: 75%;
+  margin-bottom: 10px;
+}
+
+.desc {
+  @include flex-container-y(wrap);
+  @include flex-child-static(65%);
+}
+
+.book {
+  @include flex-child-static(35%);
+}
+
+.planet-info {
+  @include flex-container-x(nowrap);
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .leftcolumn {
+  @include flex-child-static(50%);
   background: $box;
   border-radius: 5px;
-  float: left;
-  margin: 5px;
+  margin-right: 5px;
   min-height: 200px;
-  padding: 5px;
   width: 45%;
 }
 
 .rightcolumn {
+  @include flex-child-static(50%);
   background: $box;
   border-radius: 5px;
-  float: right;
-  margin: 5px;
+  margin-left: 5px;
   min-height: 200px;
-  padding: 5px;
   width: 45%;
 }
-
-.leftbottomcolumn {
-  background: $box;
-  border-radius: 5px;
-  float: left;
-  margin: 5px;
-  min-height: 200px;
-  padding: 5px;
-  width: 45%;
-}
-
-.rightbottomcolumn {
-  background: $box;
-  border-radius: 5px;
-  float: right;
-  margin: 5px;
-  min-height: 200px;
-  padding: 5px;
-  width: 45%;
-}
-
-.clear { clear: both;}

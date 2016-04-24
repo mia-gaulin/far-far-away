@@ -1,0 +1,50 @@
+header {
+  @include flex-container-y(nowrap);
+
+  h1 {
+    font-size: 36pt;
+  }
+
+  div.top-nav {
+    @include flex-container-x(wrap);
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    .search {
+
+      a {
+        color: $white;
+      }
+    }
+
+    nav {
+      list-style-type: none;
+      overflow: hidden;
+      background-color: transparent;
+
+      li {
+        float: right;
+        border-right: 1px solid #bbb;
+
+        &:first-child {
+          border-right: 0;
+        }
+
+        &:last-child {
+          border-left: 0;
+        }
+
+        a {
+          display: block;
+          color: $white;
+          padding: 14px 16px;
+          text-decoration: none;
+
+          &:hover {
+            background-color: $pink;
+          }
+        }
+      }
+    }
+  }
+}

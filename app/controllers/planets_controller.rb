@@ -11,6 +11,7 @@ class PlanetsController < ApplicationController
     @planet = Planet.find(params[:id])
     @planet_data = api_parse
     @landmarks = Landmark.where(planet: @planet)
+    @vacation = Vacation.new
   end
 
   private
