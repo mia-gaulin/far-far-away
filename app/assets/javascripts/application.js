@@ -13,3 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+
+  $(function() {
+    $('#searchBar').hide();
+    $('#searchToggle').show();
+
+    $('#searchToggle').click(function(event){
+      event.preventDefault();
+      $('#searchBar').show('slow');
+      $('#searchButton').remove();
+      $(this).remove();
+    });
+  });
+});

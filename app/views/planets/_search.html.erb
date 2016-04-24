@@ -1,7 +1,7 @@
 <p>
-  <%= form_tag planets_path, method: :get do %>
+  <%= form_tag planets_path, method: :get, id: 'searchBar' do %>
     <%= label_tag :query, "" %>
-    <%= text_field_tag :query %>
-    <%= submit_tag "Search" %>
+    <%= text_field_tag :query, "", placeholder: 'Search...', id: "query"  %>
+    <%= submit_tag "Search", id: "searchButton" %>
   <% end %>
 </p>
