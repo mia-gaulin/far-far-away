@@ -7,7 +7,7 @@ feature "user views and edits their vacation" do
   scenario "booking a vacation redirects to vacation show page" do
     visit planets_path
     click_link tatooine.name
-    click_link "Book travel"
+    expect(page).to have_content "Book travel"
 
     fill_in "Name for Reservation", with: "Skywalker"
     fill_in "Start Date", with: "2017-04-17"

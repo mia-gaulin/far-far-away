@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FarFarAway</title>
+    <title>Far, Far Away Travel</title>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
   <body>
+  <div class="layout-container">
 
-    <div class="header">
+    <header>
       <h1>Far, Far Away Travel</h1>
-    </div>
 
-    <div class="search">
-      <%= render :partial => 'planets/search' %>
-      <a href="#" id="searchToggle">Search</a>
-    </div>
-
-    <div class="top-links">
-      <% if current_user %>
-      <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-      <% end %>
-      <% if current_user.nil? %>
-      <li><%= link_to "Sign Up", new_user_registration_path %></li>
-      <li><%= link_to "Sign In", new_user_session_path %></li>
-      <% end %>
-      <li><%= link_to "Destinations", planets_path %></li>
-      <li><a href="/pages/about">About</a></li>
-      <li><a href="/pages/home">Home</a></li>
-    </div>
-
-  <div class="flash">
-    <% flash.each do |name, msg| %>
-      <% if msg.is_a?(String) %>
-        <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
-          <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+      <div class="top-nav">
+        <div class="search">
+          <%= render :partial => 'planets/search' %>
+          <a href="#" id="searchToggle">Search</a>
         </div>
+
+        <nav>
+          <% if current_user %>
+            <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+          <% end %>
+          <% if current_user.nil? %>
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+          <% end %>
+          <li><%= link_to "Destinations", planets_path %></li>
+          <li><a href="/pages/about">About</a></li>
+          <li><a href="/pages/home">Home</a></li>
+        </nav>
+      </div>
+    </header>
+
+    <div class="flash">
+      <% flash.each do |name, msg| %>
+        <% if msg.is_a?(String) %>
+          <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+            <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+
+  <div class="yield">
+    <%= yield %>
   </div>
-
-  <%= yield %>
-
+  </div>
   </body>
 </html>

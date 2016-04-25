@@ -14,7 +14,7 @@ feature "a list of points of interest shows on planet show page" do
     skywalker = Vacation.create(start_date: "2017-04-19", end_date: "2017-04-26", num_of_people: "3", vacationer: "Anakin Skywalker", planet: tatooine)
     visit planets_path
     click_link tatooine.name
-    click_link "Book travel"
+    expect(page).to have_content "Book travel"
 
     fill_in "Name for Reservation", with: skywalker.vacationer
     fill_in "Start Date", with: skywalker.start_date

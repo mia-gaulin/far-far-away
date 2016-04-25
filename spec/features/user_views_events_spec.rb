@@ -8,7 +8,7 @@ feature "once a vacation is booked user may add an itinerary" do
 
     visit planets_path
     click_link tatooine.name
-    click_link "Book travel"
+    expect(page).to have_content "Book travel"
 
     fill_in "Name for Reservation", with: skywalker.vacationer
     fill_in "Start Date", with: skywalker.start_date
