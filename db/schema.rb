@@ -23,12 +23,6 @@ ActiveRecord::Schema.define(version: 20160420230126) do
     t.integer "planet_id",   null: false
   end
 
-  create_table "itineraries", force: :cascade do |t|
-    t.integer  "vacations_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "landmarks", force: :cascade do |t|
     t.string   "name",       null: false
     t.string   "location"
