@@ -13,7 +13,7 @@
  *= require_self
  */
 
-@import "bourbon";
+// @import "bourbon";
 @import "modules/mixins";
 
 $orange: #f8b195;
@@ -24,7 +24,7 @@ $blue: #355c7d;
 $grey: #d3d3d3;
 $dark-grey: #bbbbbb;
 $font-sans: "Copperplate", "Copperplate Gothic Light", sans-serif;
-$box: rgba(70, 20, 25, 0.3);
+// $box: rgba(70, 20, 25, 0.3);
 $white: #ffffff;
 $black: #000000;
 
@@ -78,29 +78,6 @@ h3 {
   width: 50%;
 }
 
-.vaca-desc {
-  font-size: 14pt;
-  padding: 5px;
-  text-align: center;
-}
-
-.planet-desc {
-  font-size: 14pt;
-  padding: 5px;
-  padding-left: 20px;
-}
-
-.vacation-link {
-  font-size: 14pt;
-  padding: 10px;
-  text-align: center;
-
-  a {
-    color: darken($white, 15%);
-  }
-
-}
-
 .link {
   font-size: 14pt;
 
@@ -110,19 +87,10 @@ h3 {
 
 }
 
-.planet {
-  padding: 5px;
-  padding-left: 5px;
-
-  a {
-    color: $grey;
-  }
-
+.index {
+  @import "components/index";
 }
 
-.apicall {
-  font-size: 12pt;
-}
 
 .field {
   padding: 5px;
@@ -157,129 +125,12 @@ h3 {
 
 }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.home {
+  @import "components/cards";
 }
 
-.card {
-  $base-border-color: rgba($white, 0.3);
-  $base-border-radius: 3px !default;
-  $base-background-color: $white !default;
-  $base-spacing: 1.5em !default;
-  $action-color: #477DCA !default;
-  $dark-gray: $grey;
-  $base-font-color: $dark-gray !default;
-  $card-border-color: $base-border-color;
-  $card-border: 1px solid $card-border-color;
-  $card-background: lighten($card-border-color, 10%);
-  $card-header-background: transparent;
-  $card-margin: 1em;
-  $card-image-hover-opacity: 0.8;
-  $card-image-hover-color: $white;
-
-  background-color: $card-background;
-  border: $card-border;
-  border-radius: $base-border-radius;
-  box-shadow: 0 2px 4px rgba($black, 0.4);
-  flex-basis: 15em;
-  flex-grow: 1;
-  margin: 0 $card-margin $base-spacing;
-  position: relative;
-  transition: all 0.2s ease-in-out;
-
-  .card-image {
-    background-color: $card-image-hover-color;
-    height: 150px;
-    max-height: 150px;
-    overflow: hidden;
-
-    img {
-      @include border-top-radius($base-border-radius);
-      opacity: 1;
-      transition: all 0.2s ease-in-out;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .card-header {
-    background-color: $card-header-background;
-    border-bottom: $card-border;
-    border-radius: $base-border-radius $base-border-radius 0 0;
-    font-weight: bold;
-    line-height: 1.5em;
-    padding: ($base-spacing / 3) ($base-spacing / 2);
-    transition: all 0.2s ease-in-out;
-
-    a {
-      color: $white;
-    }
-  }
-
-  .card-copy {
-    font-size: 0.9em;
-    line-height: 1.5em;
-    padding: ($base-spacing / 2);
-
-    p {
-      margin: 0 0 ($base-spacing / 2);
-      color: $base-font-color;
-    }
-  }
-
-  &:hover {
-    img {
-      opacity: $card-image-hover-opacity;
-    }
-  }
-
-  &:active {
-    background-color: $card-background;
-
-    .card-header {
-      background-color: $card-background;
-    }
-  }
-}
-
-.top {
-  @include card-background;
-  @include flex-container-x(nowrap);
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.desc {
-  @include flex-container-y(wrap);
-  @include flex-child-static(65%);
-}
-
-.book {
-  @include flex-child-static(35%);
-}
-
-.planet-info {
-  @include flex-container-x(nowrap);
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.leftcolumn {
-  @include flex-child-static(50%);
-  background: $box;
-  border-radius: 5px;
-  margin-right: 5px;
-  min-height: 200px;
-  width: 45%;
-}
-
-.rightcolumn {
-  @include flex-child-static(50%);
-  background: $box;
-  border-radius: 5px;
-  margin-left: 5px;
-  min-height: 200px;
-  width: 45%;
+.show {
+  margin: 0 auto;
+  width: 90%;
+  @import "components/show";
 }

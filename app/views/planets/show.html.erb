@@ -1,73 +1,75 @@
-<h2><%= @planet.name %></h2>
+<div class="show">
+  <h2><%= @planet.name %></h2>
 
-<div class="top">
-  <div class="desc">
-    <h3><%= @planet.description %></h3>
-  </div>
-
-  <div class="book">
-    <%= render 'vacations/vacation_form' %>
-  </div>
-</div>
-
-<div class="planet-info">
-  <div class="leftcolumn">
-    <h4>What to know before you travel</h4>
-    <div class="planet-desc">
-      Language(s): <%= @planet.language %>
+  <div class="top">
+    <div class="desc">
+      <h3><%= @planet.description %></h3>
     </div>
-    <div class="planet-desc">
-      Location: <%= @planet.sector %> sector, <%= @planet.region %>
+
+    <div class="book">
+      <%= render 'vacations/vacation_form' %>
     </div>
   </div>
-  <div class="rightcolumn">
-    <div class="apicall">
-      <h4>About <%= @planet.name %></h4>
-      <% if @planet_data %>
-        <div>
-          Rotation period: <%= @planet_data["rotation_period"] %> standard days
-        </div>
-        <div>
-          Orbital period: <%= @planet_data["orbital_period"] %> standard days
-        </div>
-        <div>
-          Climate: <%= @planet_data["climate"].capitalize %>
-        </div>
-        <div>
-          Terrain: <%= @planet_data["terrain"].capitalize %>
-        </div>
-        <div>
-          Population: <%= @planet_data["population"] %>
-        </div>
-        <div>
-          Gravity: <%= @planet_data["gravity"] %>
-        </div>
-        <div>
-          Diameter: <%= @planet_data["diameter"] %> km
-        </div>
-      <% end %>
+
+  <div class="planet-info">
+    <div class="leftcolumn">
+      <h4>What to know before you travel</h4>
+      <div class="planet-desc">
+        Language(s): <%= @planet.language %>
+      </div>
+      <div class="planet-desc">
+        Location: <%= @planet.sector %> sector, <%= @planet.region %>
+      </div>
     </div>
-  </div>
-</div>
-<div class="planet-info">
-  <div class="leftcolumn">
-    <h4>Points of Interest</h4>
-      <div>
-        <% @landmarks.each do |l| %>
-          <div><%= l.name %></div>
+    <div class="rightcolumn">
+      <div class="apicall">
+        <h4>About <%= @planet.name %></h4>
+        <% if @planet_data %>
+          <div>
+            Rotation period: <%= @planet_data["rotation_period"] %> standard days
+          </div>
+          <div>
+            Orbital period: <%= @planet_data["orbital_period"] %> standard days
+          </div>
+          <div>
+            Climate: <%= @planet_data["climate"].capitalize %>
+          </div>
+          <div>
+            Terrain: <%= @planet_data["terrain"].capitalize %>
+          </div>
+          <div>
+            Population: <%= @planet_data["population"] %>
+          </div>
+          <div>
+            Gravity: <%= @planet_data["gravity"] %>
+          </div>
+          <div>
+            Diameter: <%= @planet_data["diameter"] %> km
+          </div>
         <% end %>
       </div>
+    </div>
   </div>
-  <div class="rightcolumn">
-    <h4>Events</h4>
-      <div>
-        lol filler
-      </div>
+  <div class="planet-info">
+    <div class="leftcolumn">
+      <h4>Points of Interest on <%= @planet.name %></h4>
+        <div>
+          <% @landmarks.each do |l| %>
+            <div><%= l.name %></div>
+          <% end %>
+        </div>
+    </div>
+    <div class="rightcolumn">
+      <h4>Events on <%= @planet.name %></h4>
+        <div>
+          <% @events.each do |e| %>
+            <div><%= e.name %></div>
+          <% end %>
+        </div>
+    </div>
   </div>
-  <div class="clear">
-  </div>
-</div>
 
-<div class="link">
-  <%= link_to "Go Back", planets_path %>
+  <div class="link">
+    <%= link_to "Go Back", planets_path %>
+  </div>
 </div>

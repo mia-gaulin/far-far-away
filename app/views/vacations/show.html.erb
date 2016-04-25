@@ -1,35 +1,39 @@
-<h2><%= @vacation.vacationer %>'s <%= @vacation.planet.name %> Vacation</h2>
+<div class="show">
+  <h2><%= @vacation.vacationer %>'s <%= @vacation.planet.name %> Vacation</h2>
 
-<div class="vaca-desc">
-  <b>Destination:</b> <%= @vacation.planet.name %> |
-  <b>Dates:</b> <%= @vacation.start_date %> - <%= @vacation.end_date %> |
-  <b>Number of people:</b> <%= @vacation.num_of_people %><br />
-  <b>Bookings:</b> <% @bookings.each do |b| %><%= b.name %><% end %>
-</div>
-
-<div class="vacation-link">
-  <%= link_to 'Edit', edit_vacation_path(@vacation) %>
-  <%= button_to 'Cancel Vacation', @vacation, method: :delete, data: { confirm: 'Are you sure?'} %>
-</div>
-
-<div class="vacation-link">
-  <%= link_to "Build an Itinerary", planet_events_path(@planet) %>
-</div>
-
-<div class="planet-info">
-  <div class="leftcolumn">
-    Points of Interest on <%= @vacation.planet.name %>
-    <% @landmarks.each do |l| %>
-      <li><%= l.name %></li>
-    <% end %>
+  <div class="vaca-top">
+    <div class="details">
+      <b>Destination:</b> <%= @vacation.planet.name %> |
+      <b>Dates:</b> <%= @vacation.start_date %> - <%= @vacation.end_date %> |
+      <b>Number of people:</b> <%= @vacation.num_of_people %>
+      <div class="vacation-link">
+        <%= link_to 'Edit', edit_vacation_path(@vacation) %>
+        <%= button_to 'Cancel Vacation', @vacation, method: :delete, data: { confirm: 'Are you sure?'} %>
+      </div>
+    </div>
+    <div class="itinerary">
+      <b>Bookings</b>
+      <% @bookings.each do |b| %>
+        <li><%= b.name %></li>
+      <% end %>
+    </div>
   </div>
 
+
+  <div class="planet-info">
+    <div class="leftcolumn">
+      <h4>Points of Interest on <%= @vacation.planet.name %></h4>
+      <% @landmarks.each do |l| %>
+        <li><%= l.name %></li>
+      <% end %>
+    </div>
+
   <div class="rightcolumn">
-    Events on <%= @vacation.planet.name %>
+    <h4>Book events on <%= @vacation.planet.name %></h4>
     <%= form_for [@vacation, @booking] do |f| %>
       <% @events.each do |event| %>
-      <%= check_box_tag :event_id, event.id %>
       <span><%= event.name %></span>
+      <%= check_box_tag :event_id, event.id %><br />
       <% end %>
       <%= f.submit 'Add to trip' %>
     <% end %>

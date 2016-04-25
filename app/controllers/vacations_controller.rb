@@ -1,9 +1,4 @@
 class VacationsController < ApplicationController
-  def new
-    @planet = Planet.find(params[:planet_id])
-    @vacation = Vacation.new
-  end
-
   def show
     @vacation = Vacation.find(params[:id])
     @planet = @vacation.planet
@@ -22,7 +17,7 @@ class VacationsController < ApplicationController
       redirect_to vacation_path(@vacation)
     else
       flash[:error] = @vacation.errors.full_messages.join(". ")
-      render :new
+      redirect_to planet_path(@planet)
     end
   end
 

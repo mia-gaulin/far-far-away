@@ -1,13 +1,15 @@
-<h2>Pick a destination</h2>
+<div class="index">
+  <h2>Pick a destination</h2>
 
-<ul class="planets-list">
-  <% @planets.each do |planet| %>
-    <div class="planet">
-      <%= link_to planet.name, planet_path(planet) %>
-    </div>
+  <ul class="planets-list">
+    <% @planets.each do |planet| %>
+      <div class="planet">
+        <%= link_to planet.name, planet_path(planet) %>
+      </div>
+    <% end %>
+  </ul>
+
+  <% if !params[:query] %>
+    <%= paginate @planets %>
   <% end %>
-</ul>
-
-<% if !params[:query] %>
-  <%= paginate @planets %>
-<% end %>
+</div>
