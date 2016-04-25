@@ -4,6 +4,7 @@
   <b>Destination:</b> <%= @vacation.planet.name %> |
   <b>Dates:</b> <%= @vacation.start_date %> - <%= @vacation.end_date %> |
   <b>Number of people:</b> <%= @vacation.num_of_people %><br />
+  <b>Bookings:</b> <% @bookings.each do |b| %><%= b.name %><% end %>
 </div>
 
 <div class="vacation-link">
@@ -25,5 +26,12 @@
 
   <div class="rightcolumn">
     Events on <%= @vacation.planet.name %>
+    <%= form_for [@vacation, @booking] do |f| %>
+      <% @events.each do |event| %>
+      <%= check_box_tag :event_id, event.id %>
+      <span><%= event.name %></span>
+      <% end %>
+      <%= f.submit 'Add to trip' %>
+    <% end %>
   </div>
 </div>

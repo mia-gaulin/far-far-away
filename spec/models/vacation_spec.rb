@@ -3,6 +3,8 @@ require 'rails_helper'
 describe Vacation do
   it { should belong_to :planet }
   it { should belong_to :user }
+  it { should have_many :events }
+  it { should have_many :bookings }
 
   it { should have_valid(:start_date).when("2016-06-22") }
   it { should_not have_valid(:start_date).when("2015-06-22", nil, "") }
