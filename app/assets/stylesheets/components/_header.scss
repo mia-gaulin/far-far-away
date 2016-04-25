@@ -18,13 +18,13 @@ header {
     }
 
     nav {
+      background-color: transparent;
       list-style-type: none;
       overflow: hidden;
-      background-color: transparent;
 
       li {
+        border-right: 1px solid $dark-grey;
         float: right;
-        border-right: 1px solid #bbb;
 
         &:first-child {
           border-right: 0;
@@ -35,8 +35,8 @@ header {
         }
 
         a {
-          display: block;
           color: $white;
+          display: block;
           padding: 14px 16px;
           text-decoration: none;
 

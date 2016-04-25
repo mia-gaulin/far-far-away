@@ -23,7 +23,7 @@
 }
 
 @mixin card-background {
-  $base-border-color: rgba(white, 0.3);
+  $base-border-color: rgba($white, 0.3);
   $base-border-radius: 3px !default;
   $card-border-color: $base-border-color;
   $card-border: 1px solid $card-border-color;
