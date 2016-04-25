@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160425155445) do
     t.string  "name",        null: false
     t.string  "location"
     t.text    "description"
-    t.integer "planet_id"
+    t.integer "planet_id",   null: false
   end
 
   create_table "landmarks", force: :cascade do |t|

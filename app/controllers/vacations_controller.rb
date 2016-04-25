@@ -10,8 +10,7 @@ class VacationsController < ApplicationController
     @landmarks = Landmark.where(planet: @planet)
     @events = Event.where(planet: @planet)
     @booking = Booking.new
-    @booking.vacation = @vacation
-    @vacation.bookings.build
+    @bookings = @vacation.events
   end
 
   def create
@@ -35,7 +34,6 @@ class VacationsController < ApplicationController
   def update
     @vacation = Vacation.find(params[:id])
     @planet = @vacation.planet
-    binding.pry
     if @vacation.update(edit_params)
       flash[:notice] = "Vacation updated successfully!"
       redirect_to vacation_path(@vacation)
@@ -51,14 +49,6 @@ class VacationsController < ApplicationController
     @vacation.destroy
     flash[:notice] = "Your vacation has been cancelled."
     redirect_to planets_path
-  end
-
-  def add
-    @vacation = Vacation.find(params[:id])
-    if request.post?
-      @event = Event.find(params[:event_id])
-      @vacation.bookings << @event
-    end
   end
 
   private

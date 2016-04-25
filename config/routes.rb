@@ -8,17 +8,9 @@ Rails.application.routes.draw do
     resources :events, only: [:index]
   end
 
-  resources :vacations, only: [:show, :edit, :update, :destroy]
-    # member do
-    #   post 'add'
-    # end
-  # end
-
-  # post 'vacations/:id/add', to: 'vacations#add', as: :add
-  # 
-  # map.resources :vacations do |vacation|
-  #   vacation.resources :bookings
-  # end
+  resources :vacations, only: [:show, :edit, :update, :destroy] do
+    resources :bookings, only: [:create, :new]
+  end
 
   get "/pages/:page" => "pages#show"
 
