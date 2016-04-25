@@ -21,8 +21,7 @@ feature "visitor sees details for a planet" do
     visit planets_path
     click_link tatooine.name
 
-    expect(page).to have_link "Book travel"
-    click_link "Book travel"
+    expect(page).to have_content "Book travel"
 
     expect(page).to have_content "Name for Reservation"
     expect(page).to have_content "Start Date"
@@ -33,7 +32,6 @@ feature "visitor sees details for a planet" do
   scenario "visitor books a vacation from show page" do
     visit planets_path
     click_link tatooine.name
-    click_link "Book travel"
 
     fill_in "Name for Reservation", with: skywalker.vacationer
     fill_in "Start Date", with: skywalker.start_date
@@ -53,7 +51,6 @@ feature "visitor sees details for a planet" do
 
     visit planets_path
     click_link tatooine.name
-    click_link "Book travel"
 
     expect(page).to have_selector("input[value='Skywalker']")
   end
@@ -61,7 +58,6 @@ feature "visitor sees details for a planet" do
   scenario "unsuccessful booking" do
     visit planets_path
     click_link tatooine.name
-    click_link "Book travel"
 
     fill_in "Start Date", with: skywalker.start_date
     fill_in "End Date", with: skywalker.end_date
