@@ -130,5 +130,7 @@ h3 {
 }
 
 .show {
+  margin: 0 auto;
+  width: 90%;
   @import "components/show";
 }

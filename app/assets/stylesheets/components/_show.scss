@@ -3,6 +3,7 @@
   @include flex-container-x(nowrap);
   text-align: center;
   margin-bottom: 10px;
+  min-height: 275px;
 
   .desc {
     @include flex-container-y(wrap);
@@ -10,7 +11,25 @@
   }
 
   .book {
+    @include flex-container-y(wrap);
     @include flex-child-static(35%);
+  }
+
+}
+
+.vaca-top {
+  @include card-background;
+  @include flex-container-y(wrap);
+  text-align: center;
+  margin-bottom: 10px;
+  min-height: 275px;
+
+  .details {
+
+  }
+
+  .itinerary {
+
   }
 
 }
@@ -22,10 +41,11 @@
   text-align: center;
 
   .leftcolumn {
-    @include flex-child-static(30%);
+    @include flex-child-static(45%);
     @include card-background;
     min-height: 200px;
-//
+    margin-right: 5px;
+
     .planet-desc {
       font-size: 14pt;
       padding: 5px;
@@ -35,9 +55,10 @@
   }
 
   .rightcolumn {
-    @include flex-child-static(50%);
+    @include flex-child-static(45%);
     @include card-background;
     min-height: 200px;
+    margin-left: 5px;
 
     .apicall {
       font-size: 12pt;

@@ -52,7 +52,7 @@
   </div>
   <div class="planet-info">
     <div class="leftcolumn">
-      <h4>Points of Interest</h4>
+      <h4>Points of Interest on <%= @planet.name %></h4>
         <div>
           <% @landmarks.each do |l| %>
             <div><%= l.name %></div>
@@ -60,7 +60,7 @@
         </div>
     </div>
     <div class="rightcolumn">
-      <h4>Events</h4>
+      <h4>Events on <%= @planet.name %></h4>
         <div>
           <% @events.each do |e| %>
             <div><%= e.name %></div>

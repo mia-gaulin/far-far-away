@@ -16,6 +16,6 @@ feature "once a vacation is booked user may add an itinerary" do
     fill_in "Number of People", with: skywalker.num_of_people
     click_button "Submit"
 
-    expect(page).to have_content "Events on #{tatooine.name}"
+    expect(page).to have_content "Book events on #{tatooine.name}"
   end
 end
