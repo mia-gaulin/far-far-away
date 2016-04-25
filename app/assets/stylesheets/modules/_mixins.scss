@@ -1,9 +1,9 @@
 @mixin flex($value) {
   -webkit-box-flex: $value;
-  -moz-box-flex:  $value;
-  -webkit-flex:  $value;
-  -ms-flex:  $value;
-  flex:  $value;
+  -moz-box-flex: $value;
+  -webkit-flex: $value;
+  -ms-flex: $value;
+  flex: $value;
 }
 
 @mixin flex-container-base($direction, $wrap) {

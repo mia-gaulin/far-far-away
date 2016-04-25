@@ -1,9 +1,9 @@
 .top {
   @include card-background;
   @include flex-container-x(nowrap);
-  text-align: center;
   margin-bottom: 10px;
   min-height: 275px;
+  text-align: center;
 
   .desc {
     @include flex-container-y(wrap);
@@ -20,18 +20,9 @@
 .vaca-top {
   @include card-background;
   @include flex-container-y(wrap);
-  text-align: center;
   margin-bottom: 10px;
   min-height: 275px;
-
-  .details {
-
-  }
-
-  .itinerary {
-
-  }
-
+  text-align: center;
 }
 
 .planet-info {
@@ -43,8 +34,8 @@
   .leftcolumn {
     @include flex-child-static(45%);
     @include card-background;
-    min-height: 200px;
     margin-right: 5px;
+    min-height: 200px;
 
     .planet-desc {
       font-size: 14pt;
@@ -57,8 +48,8 @@
   .rightcolumn {
     @include flex-child-static(45%);
     @include card-background;
-    min-height: 200px;
     margin-left: 5px;
+    min-height: 200px;
 
     .apicall {
       font-size: 12pt;
