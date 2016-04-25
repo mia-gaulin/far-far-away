@@ -1,3 +1,11 @@
+@mixin flex($value) {
+  -webkit-box-flex: $value;
+  -moz-box-flex:  $value;
+  -webkit-flex:  $value;
+  -ms-flex:  $value;
+  flex:  $value;
+}
+
 @mixin flex-container-base($direction, $wrap) {
   display: flex;
   flex-direction: $direction;
@@ -32,4 +40,9 @@
   border: $card-border;
   border-radius: $base-border-radius;
   box-shadow: 0 2px 4px rgba($black, 0.4);
+}
+
+@mixin border-top-radius($radii) {
+  border-top-left-radius: $radii;
+  border-top-right-radius: $radii;
 }

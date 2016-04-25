@@ -1,29 +1,31 @@
-<h2><%= @vacation.vacationer %>'s <%= @vacation.planet.name %> Vacation</h2>
+<div class="show">
+  <h2><%= @vacation.vacationer %>'s <%= @vacation.planet.name %> Vacation</h2>
 
-<div class="vaca-desc">
-  <b>Destination:</b> <%= @vacation.planet.name %> |
-  <b>Dates:</b> <%= @vacation.start_date %> - <%= @vacation.end_date %> |
-  <b>Number of people:</b> <%= @vacation.num_of_people %><br />
-</div>
-
-<div class="vacation-link">
-  <%= link_to 'Edit', edit_vacation_path(@vacation) %>
-  <%= button_to 'Cancel Vacation', @vacation, method: :delete, data: { confirm: 'Are you sure?'} %>
-</div>
-
-<div class="vacation-link">
-  <%= link_to "Build an Itinerary", planet_events_path(@planet) %>
-</div>
-
-<div class="planet-info">
-  <div class="leftcolumn">
-    Points of Interest on <%= @vacation.planet.name %>
-    <% @landmarks.each do |l| %>
-      <li><%= l.name %></li>
-    <% end %>
+  <div class="vaca-desc">
+    <b>Destination:</b> <%= @vacation.planet.name %> |
+    <b>Dates:</b> <%= @vacation.start_date %> - <%= @vacation.end_date %> |
+    <b>Number of people:</b> <%= @vacation.num_of_people %><br />
   </div>
 
-  <div class="rightcolumn">
-    Events on <%= @vacation.planet.name %>
+  <div class="vacation-link">
+    <%= link_to 'Edit', edit_vacation_path(@vacation) %>
+    <%= button_to 'Cancel Vacation', @vacation, method: :delete, data: { confirm: 'Are you sure?'} %>
+  </div>
+
+  <div class="vacation-link">
+    <%= link_to "Build an Itinerary", planet_events_path(@planet) %>
+  </div>
+
+  <div class="planet-info">
+    <div class="leftcolumn">
+      Points of Interest on <%= @vacation.planet.name %>
+      <% @landmarks.each do |l| %>
+        <li><%= l.name %></li>
+      <% end %>
+    </div>
+
+    <div class="rightcolumn">
+      Events on <%= @vacation.planet.name %>
+    </div>
   </div>
 </div>

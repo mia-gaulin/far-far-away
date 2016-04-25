@@ -1,0 +1,65 @@
+.top {
+  @include card-background;
+  @include flex-container-x(nowrap);
+  text-align: center;
+  margin-bottom: 10px;
+
+  .desc {
+    @include flex-container-y(wrap);
+    @include flex-child-static(65%);
+  }
+
+  .book {
+    @include flex-child-static(35%);
+  }
+
+}
+
+.planet-info {
+  @include flex-container-x(wrap);
+  justify-content: space-between;
+  margin-bottom: 10px;
+  text-align: center;
+
+  .leftcolumn {
+    @include flex-child-static(30%);
+    @include card-background;
+    min-height: 200px;
+//
+    .planet-desc {
+      font-size: 14pt;
+      padding: 5px;
+      padding-left: 20px;
+    }
+
+  }
+
+  .rightcolumn {
+    @include flex-child-static(50%);
+    @include card-background;
+    min-height: 200px;
+
+    .apicall {
+      font-size: 12pt;
+    }
+
+  }
+
+}
+
+.vaca-desc {
+  font-size: 14pt;
+  padding: 5px;
+  text-align: center;
+}
+
+.vacation-link {
+  font-size: 14pt;
+  padding: 10px;
+  text-align: center;
+
+  a {
+    color: darken($white, 15%);
+  }
+
+}

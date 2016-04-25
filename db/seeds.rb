@@ -129,3 +129,6 @@ Landmark.create(name: "Myyydril Caverns", planet: kashyyyk)
 Landmark.create(name: "Shadowlands", planet: kashyyyk)
 Landmark.create(name: "Wawaatt Archipelago", planet: kashyyyk)
 Landmark.create(name: "Wartaki Islands", planet: kashyyyk)
+
+Event.create(name: "Podracing", planet: tatooine)
+Event.create(name: "Bullseye womp rats", planet: tatooine)

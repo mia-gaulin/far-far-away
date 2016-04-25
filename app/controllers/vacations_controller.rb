@@ -8,6 +8,7 @@ class VacationsController < ApplicationController
     @vacation = Vacation.find(params[:id])
     @planet = @vacation.planet
     @landmarks = Landmark.where(planet: @planet)
+    @events = Event.where(planet: @planet)
   end
 
   def create
