@@ -25,5 +25,12 @@
 
   <div class="rightcolumn">
     Events on <%= @vacation.planet.name %>
+    <%= form_for @vacation, :url => add_path( @vacation ), :html => { :method => "put" } do |f| %>
+      <% @events.each do |event| %>
+      <%= check_box_tag :booking_ids, event.id %>
+      <span><%= event.name %></span>
+      <% end %>
+      <%= f.submit 'Add to trip' %>
+    <% end %>
   </div>
 </div>

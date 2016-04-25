@@ -3,6 +3,10 @@ require 'date'
 class Vacation < ActiveRecord::Base
   belongs_to :planet
   belongs_to :user
+  has_many :bookings
+  has_many :events, through: :bookings
+
+  accepts_nested_attributes_for :bookings
 
   validates :start_date, presence: true
   validate :start_date_cannot_be_in_the_past

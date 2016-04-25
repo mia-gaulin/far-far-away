@@ -9,6 +9,16 @@ Rails.application.routes.draw do
   end
 
   resources :vacations, only: [:show, :edit, :update, :destroy]
+    # member do
+    #   post 'add'
+    # end
+  # end
+
+  # post 'vacations/:id/add', to: 'vacations#add', as: :add
+  # 
+  # map.resources :vacations do |vacation|
+  #   vacation.resources :bookings
+  # end
 
   get "/pages/:page" => "pages#show"
 
