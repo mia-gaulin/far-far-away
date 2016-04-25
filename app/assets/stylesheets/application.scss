@@ -35,8 +35,8 @@ $black: #000000;
 html,
 body {
   height: 100%;
-  width: 100%;
   overflow: auto;
+  width: 100%;
 }
 
 body {
@@ -48,8 +48,8 @@ body {
 
   div.layout-container {
     @include flex-container-y(nowrap);
-    width: 80%;
     margin: 0 auto;
+    width: 80%;
 
     @import "components/header";
   }
