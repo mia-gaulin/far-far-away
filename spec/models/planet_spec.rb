@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe Planet do
-  it { should have_many(:vacations) }
-  it { should have_many(:landmarks) }
+  it { should have_many :vacations }
+  it { should have_many :landmarks }
 
   it { should have_valid(:name).when("Tatooine", "Jakku") }
   it { should_not have_valid(:name).when(nil, "") }

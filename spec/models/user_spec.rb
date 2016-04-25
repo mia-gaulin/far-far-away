@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe User do
-  it { should have_many(:vacations) }
+  it { should have_many :vacations }
 
   it { should have_valid(:first_name).when("Luke", "Leia") }
   it { should_not have_valid(:first_name).when(nil, "") }
