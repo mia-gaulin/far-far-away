@@ -3,7 +3,7 @@ require 'rails_helper'
 feature "once a vacation is booked user may add an itinerary" do
   let(:skywalker) { FactoryGirl.create(:vacation) }
 
-  scenario "user views itinerary link" do
+  scenario "user views itinerary options" do
     tatooine = FactoryGirl.create(:planet)
 
     visit planets_path
@@ -17,5 +17,17 @@ feature "once a vacation is booked user may add an itinerary" do
     click_button "Submit"
 
     expect(page).to have_content "Book events on #{tatooine.name}"
+  end
+
+  scenario "user adds event to itinerary" do
+    event = Event.create(name: "Podracing", planet: skywalker.planet)
+
+    visit vacation_path(skywalker)
+    expect(page).to_not have_content "Bookings"
+
+    check 'event_id'
+    click_button 'Add to trip'
+
+    expect(page).to have_content "Bookings"
   end
 end
