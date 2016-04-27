@@ -16,7 +16,7 @@ $(function() {
     });
 
     request.done(function() {
-      var html = '<li>' +
+      var html = '<li class="note">' +
           newNoteBody
         '</li>';
 

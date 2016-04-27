@@ -25,9 +25,7 @@
   text-align: center;
 
   .details {
-    padding-top: 10px;
-    // @include flex-container-y(wrap);
-    // @include flex-child-static(30%);
+    padding-top: 15px;
 
     b {
       font-size: 14pt;
@@ -35,11 +33,30 @@
   }
 
   .itinerary {
-    @include flex-container-y(wrap);
-    // @include flex-child-static(70%);
-    .notes {
-      p {
-        display: inline;
+    @include flex-container-x(wrap);
+    width: 100%;
+
+    .leftcolumn {
+      @include flex-container-y(wrap);
+      @include flex-child-static(30%);
+      margin-right: 5px;
+      min-height: 200px;
+    }
+
+    .rightcolumn {
+      @include flex-child-static(65%);
+      margin-left: 5px;
+      min-height: 200px;
+
+      .notes {
+        @include flex-container-y(wrap);
+        .note {
+          text-align: left;
+          .button_to {
+            float: right;
+            padding-right: 10px;
+          }
+        }
       }
     }
   }
