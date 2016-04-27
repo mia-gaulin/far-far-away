@@ -3,22 +3,38 @@
 
   <div class="vaca-top">
     <div class="details">
-      <b>Destination:</b> <%= @vacation.planet.name %> |
-      <b>Dates:</b> <%= @vacation.start_date %> - <%= @vacation.end_date %> |
-      <b>Number of people:</b> <%= @vacation.num_of_people %>
+      <b>Destination</b> <%= @vacation.planet.name %>
+      <b>Dates</b> <%= @vacation.start_date %> - <%= @vacation.end_date %>
+      <b>Number of people</b> <%= @vacation.num_of_people %>
       <div class="vacation-link">
         <%= link_to 'Edit', edit_vacation_path(@vacation) %>
         <%= button_to 'Cancel Vacation', @vacation, method: :delete, data: { confirm: 'Are you sure?'} %>
       </div>
     </div>
     <div class="itinerary">
-      Notes
-      <% @notes.each do |n| %>
-        <li><%= n.body %></li>
-      <% end %>
+      <h4>Notes</h4>
+      <div class="notes">
+        <% @notes.each do |n| %>
+          <li><%= n.body %><%= button_to "X", api_vacation_note_path(n.vacation.id, n.id), class:"button", :method => :delete %></li>
+        <% end %>
+      </div>
+
+      <div class="form">
+        <%= form_for [@vacation, @note], html: { id: :new_note } do |f| %>
+          <div class="field">
+            <b><%= f.label :body, 'Add note' %></b>
+          </div>
+          <div class="field">
+            <%=f.text_area :body %>
+            <%= f.hidden_field(:id, value: @note.id) %>
+          </div>
+          <div class="actions">
+            <%= f.submit 'Add' %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-
 
   <div class="planet-info">
     <div class="leftcolumn">
@@ -29,15 +45,7 @@
     </div>
 
     <div class="rightcolumn">
-      <h4>Add note</h4>
-      <%= form_for [@vacation, @note] do |f| %>
-        <div class="field">
-          <%=f.text_area :body %>
-        </div>
-        <div class="actions">
-          <%= f.submit 'Add' %>
-        </div>
-      <% end %>
+      <h4>STUFF</h4>
     </div>
   </div>
 

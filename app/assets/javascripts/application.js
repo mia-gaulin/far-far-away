@@ -22,7 +22,7 @@ $(document).ready(function() {
 
     $('#searchToggle').click(function(event){
       event.preventDefault();
-      $('#searchBar').show('fast');
+      $('#searchBar').show(500);
       $('#searchButton').remove();
       $(this).remove();
     });

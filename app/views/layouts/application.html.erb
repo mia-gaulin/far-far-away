@@ -36,8 +36,8 @@
     <div class="flash">
       <% flash.each do |name, msg| %>
         <% if msg.is_a?(String) %>
-          <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
-            <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+          <div data-failure class="failure-box round <%= name.to_s == 'notice' ? 'success' : 'failure' %>">
+            <%= content_tag(:div, msg, class: "failure failure-#{name}") %>
           </div>
         <% end %>
       <% end %>

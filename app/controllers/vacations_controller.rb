@@ -7,7 +7,7 @@ class VacationsController < ApplicationController
     @booking = Booking.new
     @bookings = @vacation.events
     @note = Note.new
-    @notes = @vacation.notes
+    @notes = @vacation.notes.order(created_at: :desc)
   end
 
   def create
@@ -35,7 +35,7 @@ class VacationsController < ApplicationController
       flash[:notice] = "Vacation updated successfully!"
       redirect_to vacation_path(@vacation)
     else
-      flash[:alert] = @vacation.errors.full_messages.join(". ")
+      flash[:failure] = @vacation.errors.full_messages.join(". ")
       render :edit
     end
   end

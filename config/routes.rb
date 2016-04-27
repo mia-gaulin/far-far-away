@@ -16,6 +16,12 @@ Rails.application.routes.draw do
     resources :notes, only: [:create]
   end
 
+  namespace :api do
+    resources :vacations do
+      resources :notes
+    end
+  end
+
   get "/pages/:page" => "pages#show"
 
   root "pages#show", page: "home"
