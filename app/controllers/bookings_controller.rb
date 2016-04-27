@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
     if @booking.save
       flash[:notice] = "Itinerary updated successfully!"
     else
-      flash[:alert] = "Itinerary not updated."
+      flash[:failure] = "Itinerary not updated."
     end
     redirect_to vacation_path(@vacation)
   end
@@ -19,7 +19,6 @@ class BookingsController < ApplicationController
     )
   end
 end
-
 
 # <h4>Book events on <%= @vacation.planet.name %></h4>
 # <%= form_for [@vacation, @booking] do |f| %>

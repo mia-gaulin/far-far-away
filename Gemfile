@@ -29,6 +29,8 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'valid_attribute'
   gem 'shoulda'
+  gem 'poltergeist'
+  gem 'selenium-webdriver'
 end
 
 group :test do

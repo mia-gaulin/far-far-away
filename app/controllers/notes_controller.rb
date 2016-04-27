@@ -5,7 +5,7 @@ class NotesController < ApplicationController
     if @note.save
       flash[:notice] = "Note saved!"
     else
-      flash[:alert] = @note.errors.full_messages.join(". ")
+      flash[:failure] = @note.errors.full_messages.join(". ")
     end
     redirect_to vacation_path(@vacation)
   end
@@ -18,3 +18,5 @@ class NotesController < ApplicationController
     ).merge(vacation: Vacation.find(params[:vacation_id]))
   end
 end
+
+# <%= button_to "Delete Note", api_vacation_note_path(n.vacation.id, n.id), class:"button", :method => :delete %>

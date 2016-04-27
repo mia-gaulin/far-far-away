@@ -19,10 +19,25 @@
 
 .vaca-top {
   @include card-background;
-  @include flex-container-y(wrap);
+  @include flex-container-x(wrap);
   margin-bottom: 10px;
   min-height: 275px;
   text-align: center;
+
+  .details {
+    padding-top: 10px;
+    // @include flex-container-y(wrap);
+    // @include flex-child-static(30%);
+
+    b {
+      font-size: 14pt;
+    }
+  }
+
+  .itinerary {
+    @include flex-container-y(wrap);
+    // @include flex-child-static(70%);
+  }
 }
 
 .planet-info {
