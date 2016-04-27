@@ -3,11 +3,11 @@ class Api::NotesController < ApplicationController
     @note = Note.new(note_params)
     if @note.save
       render json: { notes: @note },
-        status: :created,
-        location: api_vacation_note_url(@vacation, @comment)
+      status: :created,
+      location: api_vacation_note_url(@vacation, @comment)
     else
       render json: @note.errors,
-        status: :unprocessable_entity
+      status: :unprocessable_entity
     end
   end
 

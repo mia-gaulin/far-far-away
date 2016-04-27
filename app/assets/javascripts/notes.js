@@ -10,30 +10,30 @@ $(function() {
     };
 
     var request = $.ajax({
-      method: "POST",
+      method: 'POST',
       data: newNote,
       url: targetUrl
     });
 
     request.done(function() {
-      var html = "<li>" +
+      var html = '<li>' +
           newNoteBody
-        "</li>";
+        '</li>';
 
-      $("div.notes").prepend(html);
-      $('#note_body').val("");
+      $('div.notes').prepend(html);
+      $('#note_body').val('');
     });
   });
 
   $(function() {
-    $(".button_to").click(function(event) {
+    $('.button_to').click(function(event) {
       event.preventDefault();
 
       var element = event.target;
-      var targetUrl = $(this).attr("action");
+      var targetUrl = $(this).attr('action');
 
       $.ajax({
-        method: "DELETE",
+        method: 'DELETE',
         url: targetUrl,
         dataType: "json"
       }).done(function() {
