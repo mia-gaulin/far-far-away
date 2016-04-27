@@ -1,15 +1,4 @@
 class Api::NotesController < ApplicationController
-  # def index
-  #   @vacation = Vacation.find(params[:vacation_id])
-  #   @notes = @vacation.notes.order("created_at DESC")
-  #   render json: { notes: @notes }
-  # end
-  #
-  # def show
-  #   @note = Note.find(params[:id])
-  #   render json: { notes: @notes }
-  # end
-
   def create
     @note = Note.new(note_params)
     if @note.save
@@ -21,16 +10,6 @@ class Api::NotesController < ApplicationController
         status: :unprocessable_entity
     end
   end
-  #
-  # def update
-  #   @note = Note.find(params[:id])
-  #   if @note.update(note_params)
-  #     render json: { notes: @note }
-  #   else
-  #     render json: @note.errors,
-  #       status: :unprocessable_entity
-  #   end
-  # end
 
   def destroy
     @note = Note.find(params[:id])

@@ -1,5 +1,5 @@
 $(function() {
-  $("form#new_note").submit(function(event) {
+  $('form#new_note').submit(function(event) {
     event.preventDefault();
     var targetUrl = $(this).attr('action');
     var newNoteBody = $('#note_body').val();

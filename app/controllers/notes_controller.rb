@@ -18,5 +18,3 @@ class NotesController < ApplicationController
     ).merge(vacation: Vacation.find(params[:vacation_id]))
   end
 end
-
-# <%= button_to "Delete Note", api_vacation_note_path(n.vacation.id, n.id), class:"button", :method => :delete %>
