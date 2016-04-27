@@ -5,6 +5,7 @@ class Vacation < ActiveRecord::Base
   belongs_to :user
   has_many :bookings
   has_many :events, through: :bookings
+  has_many :notes
 
   accepts_nested_attributes_for :bookings
 

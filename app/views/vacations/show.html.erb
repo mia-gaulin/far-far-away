@@ -12,11 +12,9 @@
       </div>
     </div>
     <div class="itinerary">
-      <% unless @bookings.empty? %>
-        <b>Bookings</b>
-        <% @bookings.each do |b| %>
-          <li><%= b.name %></li>
-        <% end %>
+      Notes
+      <% @notes.each do |n| %>
+        <li><%= n.body %></li>
       <% end %>
     </div>
   </div>
@@ -30,14 +28,31 @@
       <% end %>
     </div>
 
-  <div class="rightcolumn">
-    <h4>Book events on <%= @vacation.planet.name %></h4>
-    <%= form_for [@vacation, @booking] do |f| %>
-      <% @events.each do |event| %>
-      <span><%= event.name %></span>
-      <%= check_box_tag :event_id, event.id %><br />
+    <div class="rightcolumn">
+      <h4>Add note</h4>
+      <%= form_for [@vacation, @note] do |f| %>
+        <div class="field">
+          <%=f.text_area :body %>
+        </div>
+        <div class="actions">
+          <%= f.submit 'Add' %>
+        </div>
       <% end %>
-      <%= f.submit 'Add to trip' %>
-    <% end %>
+    </div>
   </div>
-</div>
+
+  <div class="planet-info">
+    <div class="leftcolumn">
+
+    </div>
+
+    <div class="rightcolumn">
+      <h4>Something else here</h4>
+      <% unless @bookings.empty? %>
+        <b>Bookings</b>
+        <% @bookings.each do |b| %>
+          <li><%= b.name %></li>
+        <% end %>
+      <% end %>
+    </div>
+  </div>

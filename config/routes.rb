@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create, :new]
   end
 
+  resources :vacation do
+    resources :notes, only: [:create]
+  end
+
   get "/pages/:page" => "pages#show"
 
   root "pages#show", page: "home"
