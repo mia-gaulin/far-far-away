@@ -15,7 +15,7 @@
       <h4>Notes</h4>
       <div class="notes">
         <% @notes.each do |n| %>
-          <li><%= n.body %><%= button_to "Delete Note", api_vacation_note_path(n.vacation.id, n.id), class:"button", :method => :delete %></li>
+          <li><%= n.body %><%= button_to "X", api_vacation_note_path(n.vacation.id, n.id), class:"button", :method => :delete %></li>
         <% end %>
       </div>
 

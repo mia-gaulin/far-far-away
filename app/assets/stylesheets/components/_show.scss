@@ -37,6 +37,11 @@
   .itinerary {
     @include flex-container-y(wrap);
     // @include flex-child-static(70%);
+    .notes {
+      p {
+        display: inline;
+      }
+    }
   }
 }
 

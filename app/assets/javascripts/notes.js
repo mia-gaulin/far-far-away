@@ -10,13 +10,9 @@ $(function() {
     };
 
     var request = $.ajax({
-      if (body == "") {
-        window.alert("Note cannot be blank");
-      else
-        method: "POST",
-        data: newNote,
-        url: targetUrl
-      }
+      method: "POST",
+      data: newNote,
+      url: targetUrl
     });
 
     request.done(function() {

@@ -14,12 +14,12 @@ feature "user may add notes to their vacation", js: true do
     expect(page).to have_content 'Check out Mos Eisley!'
   end
 
-  scenario "unsuccessfully adds note" do
-    visit vacation_path(skywalker)
-
-    expect(page).to have_content 'Add note'
-    click_button 'Add'
-
-    expect(page).to have_content "Body can't be blank"
-  end
+  # scenario "unsuccessfully adds note" do
+  #   visit vacation_path(skywalker)
+  #
+  #   expect(page).to have_content 'Add note'
+  #   click_button 'Add'
+  #
+  #   expect(page).to have_content "Body can't be blank"
+  # end
 end
