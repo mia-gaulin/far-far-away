@@ -19,3 +19,13 @@ class BookingsController < ApplicationController
     )
   end
 end
+
+
+# <h4>Book events on <%= @vacation.planet.name %></h4>
+# <%= form_for [@vacation, @booking] do |f| %>
+#   <% @events.each do |event| %>
+#   <span><%= event.name %></span>
+#   <%= check_box_tag :event_id, event.id %><br />
+#   <% end %>
+#   <%= f.submit 'Add to trip' %>
+# <% end %>

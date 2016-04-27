@@ -6,6 +6,8 @@ class VacationsController < ApplicationController
     @events = Event.where(planet: @planet)
     @booking = Booking.new
     @bookings = @vacation.events
+    @note = Note.new
+    @notes = @vacation.notes
   end
 
   def create
