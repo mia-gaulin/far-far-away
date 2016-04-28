@@ -2,16 +2,16 @@
 ![Code Climate](https://codeclimate.com/github/mia-gaulin/far-far-away.png)
 ![Coverage Status](https://coveralls.io/repos/mia-gaulin/far-far-away/badge.png)
 
-description
+Far, Far Away Travel was built in Ruby on Rails as my capstone project for Launch Academy. It exists to book travel to the various planets of the Star Wars galaxy.
 
 [Far, Far Away Travel Website](https://farfarawaytravel.herokuapp.com/)
 
 ## Features
-* Users may view details of and book travel to any planet listed
-* Users can edit or delete their vacations
+* View details of and book travel to any planet listed
+* Edit or delete vacations
 * Planets have points of interest and events
-* Users may sign up to prefill vacation form
-* Users may add and delete notes to their vacations
+* User authentication to prefill vacation form
+* Add and delete notes to vacations
 
 ## Technologies
 * User authentication with Devise
@@ -22,4 +22,4 @@ description
 * Feature testing with Capybara
 * Model testing with RSpec
 * Deployed on Heroku
-* Built with full customized SASS, including flexbox
+* Built with full customized SASS, including Flexbox
