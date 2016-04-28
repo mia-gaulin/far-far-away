@@ -50,9 +50,16 @@
 
       .notes {
         @include flex-container-y(wrap);
+
         .note {
           text-align: left;
-          .button_to {
+          margin-bottom: 5px;
+
+          > div {
+            max-width: 80%;
+          }
+
+          .deleteNoteForm {
             float: right;
             padding-right: 10px;
           }

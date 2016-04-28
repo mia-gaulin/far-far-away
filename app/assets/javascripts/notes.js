@@ -1,3 +1,4 @@
+
 $(function() {
   $('form#new_note').submit(function(event) {
     event.preventDefault();
@@ -12,33 +13,44 @@ $(function() {
     var request = $.ajax({
       method: 'POST',
       data: newNote,
-      url: targetUrl
+      url: targetUrl,
+      success: function(data) {
+        var note = data
+        var html = '<li class="note">' +
+            newNoteBody + '<a href="#" class="delete-note" id=' + note.id + '>X</a>' +
+          '</li>';
+
+        $('div.notes').prepend(html);
+        $('#note_body').val('');
+      }
     });
 
-    request.done(function() {
-      var html = '<li class="note">' +
-          newNoteBody
-        '</li>';
-
-      $('div.notes').prepend(html);
-      $('#note_body').val('');
-    });
+    // request.done(function(msg) {
+    //   var note = msg
+    //   var html = '<li class="note">' +
+    //       newNoteBody + '<a href="#" class="delete-note" id=' + note.id + '>X</a>' +
+    //     '</li>';
+    //
+    //   $('div.notes').prepend(html);
+    //   $('#note_body').val('');
+    // });
   });
 
-  $(function() {
-    $('.button_to').click(function(event) {
-      event.preventDefault();
+  $('.delete-note').click(function(event) {
+    event.preventDefault();
 
-      var element = event.target;
-      var targetUrl = $(this).attr('action');
+    //var deleteButton = event.target;
+    var vacationContainer = $('.vacation-container');
+    var vacationID = vacationContainer.attr('id');
+    var noteID = $(this).attr('id');
+    var targetUrl = '/api/vacations/' + vacationID + '/notes/' + noteID;
 
-      $.ajax({
-        method: 'DELETE',
-        url: targetUrl,
-        dataType: "json"
-      }).done(function() {
-        $(element).parent().parent().remove();
-      });
+    $.ajax({
+      method: 'DELETE',
+      url: targetUrl,
+      dataType: 'json'
+    }).done(function() {
+      $("#note-"+noteID).remove();
     });
   });
 });

@@ -1,4 +1,4 @@
-<div class="show">
+<div class="show vacation-container" id="<%= @vacation.id %>">
   <h2><%= @vacation.vacationer %>'s <%= @vacation.planet.name %> Vacation</h2>
 
   <div class="vaca-top">
@@ -33,7 +33,10 @@
         <h4>Notes</h4>
         <div class="notes">
           <% @notes.each do |n| %>
-          <li class="note"><%= n.body %> <%= button_to "X", api_vacation_note_path(n.vacation.id, n.id), class:"button", :method => :delete %></li>
+            <li class="note" id="note-<%= n.id %>">
+              <%= n.body %>
+              <%= link_to "X", "#", class: "delete-note", id: n.id %>
+            </li>
           <% end %>
         </div>
       </div>

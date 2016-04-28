@@ -2,7 +2,7 @@ class Api::NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
     if @note.save
-      render json: { notes: @note },
+      render json: {notes: @note},
       status: :created,
       location: api_vacation_note_url(@vacation, @comment)
     else

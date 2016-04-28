@@ -48,6 +48,12 @@ class VacationsController < ApplicationController
     redirect_to planets_path
   end
 
+  # <%= button_to "X", api_vacation_note_path(n.vacation.id, n.id),
+  #  class:"deleteNoteButton",
+  # :method => :delete,
+  # :form_class => "deleteNoteForm",
+  # id: "#{n.id}" %>
+
   private
 
   def vacation_params
