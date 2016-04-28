@@ -18,8 +18,8 @@ $(function() {
         var noteID = noteData.attr('id');
 
         var html = '<li class="note" id=note-' + noteID + '>' +
-            newNoteBody + '<a class="delete-note" id=' + noteID + ' href="#">X</a>' +
-          '</li>';
+            newNoteBody + '<a class="delete-note" id=' + noteID +
+            ' href="#">X</a>' + '</li>';
 
         $('div.notes').prepend(html);
         $('#note_body').val('');

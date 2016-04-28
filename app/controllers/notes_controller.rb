@@ -4,7 +4,6 @@ class NotesController < ApplicationController
     @vacation = @note.vacation
     if @note.save
       render json: @note
-      # binding.pry
       flash[:notice] = "Note saved!"
     else
       flash[:failure] = @note.errors.full_messages.join(". ")

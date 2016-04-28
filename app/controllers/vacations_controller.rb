@@ -4,8 +4,6 @@ class VacationsController < ApplicationController
     @planet = @vacation.planet
     @landmarks = Landmark.where(planet: @planet)
     @events = Event.where(planet: @planet)
-    @booking = Booking.new
-    @bookings = @vacation.events
     @note = Note.new
     @notes = @vacation.notes.order(created_at: :desc)
   end

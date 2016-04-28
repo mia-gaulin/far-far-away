@@ -1,6 +1,5 @@
 class Api::NotesController < ApplicationController
   def create
-    binding.pry
     @note = Note.new(note_params)
     if @note.save
       render json: @note.to_json,
