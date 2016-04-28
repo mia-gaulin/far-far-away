@@ -27,9 +27,9 @@ $font-sans: "Copperplate", "Copperplate Gothic Light", sans-serif;
 $white: #ffffff;
 $black: #000000;
 
-* {
-  box-model: border-box;
-}
+// * {
+//   box-model: border-box;
+// }
 
 html,
 body {
@@ -81,6 +81,7 @@ h3 {
 }
 
 .static {
+  @import "components/index";
   margin: 0 auto;
   width: 90%;
 }

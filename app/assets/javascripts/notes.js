@@ -1,3 +1,20 @@
+var deleteCallback = function(event) {
+  event.preventDefault();
+
+  var vacationContainer = $('.vacation-container');
+  var vacationID = vacationContainer.attr('id');
+  var noteID = event.target.id;
+  var targetUrl = '/api/vacations/' + vacationID + '/notes/' + noteID;
+
+  $.ajax({
+    method: 'DELETE',
+    url: targetUrl,
+    dataType: 'json'
+  }).done(function() {
+    $("#note-"+noteID).remove();
+  });
+};
+
 $(function() {
   $('form#new_note').submit(function(event) {
     event.preventDefault();
@@ -23,24 +40,8 @@ $(function() {
 
         $('div.notes').prepend(html);
         $('#note_body').val('');
+        $('.delete-note').click(deleteCallback);
       }
-    });
-  });
-
-  $('.delete-note').click(function(event) {
-    event.preventDefault();
-
-    var vacationContainer = $('.vacation-container');
-    var vacationID = vacationContainer.attr('id');
-    var noteID = event.target.id;
-    var targetUrl = '/api/vacations/' + vacationID + '/notes/' + noteID;
-
-    $.ajax({
-      method: 'DELETE',
-      url: targetUrl,
-      dataType: 'json'
-    }).done(function() {
-      $("#note-"+noteID).remove();
     });
   });
 });
