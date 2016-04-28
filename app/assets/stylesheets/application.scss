@@ -71,12 +71,6 @@ h3 {
   padding-right: 40px;
 }
 
-.about {
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
 .link {
   font-size: 14pt;
 
@@ -86,10 +80,23 @@ h3 {
 
 }
 
+.static {
+  margin: 0 auto;
+  width: 90%;
+}
+
 .index {
   @import "components/index";
 }
 
+.container {
+  @include card-background;
+  @include flex-container-x(wrap);
+  @include flex-container-y(nowrap);
+  min-height: 175px;
+  padding: 10px;
+  text-align: center;
+}
 
 .field {
   padding: 5px;
