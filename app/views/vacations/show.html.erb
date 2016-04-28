@@ -15,8 +15,8 @@
       <div class="leftcolumn">
         <div class="form">
           <%= form_for [@vacation, @note], html: { id: :new_note } do |f| %>
-            <div class="field">
-              <b><%= f.label :body, 'Add note' %></b>
+            <div>
+              <h4><%= f.label :body, 'Add note' %></h4>
             </div>
             <div class="field">
               <%=f.text_area :body, :rows=>5, :cols=>40 %>
@@ -52,7 +52,7 @@
     </div>
 
     <div class="rightcolumn">
-      <h4>STUFF</h4>
+      <h4>Inhabitants</h4>
     </div>
   </div>
 

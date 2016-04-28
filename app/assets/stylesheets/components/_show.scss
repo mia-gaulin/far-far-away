@@ -37,7 +37,7 @@
     width: 100%;
 
     .leftcolumn {
-      @include flex-container-y(wrap);
+      // @include flex-container-y(wrap);
       @include flex-child-static(30%);
       margin-right: 5px;
       min-height: 200px;
@@ -45,6 +45,7 @@
 
     .rightcolumn {
       @include flex-child-static(65%);
+      padding: 5px;
       margin-left: 5px;
       min-height: 200px;
 
@@ -59,9 +60,12 @@
             max-width: 80%;
           }
 
-          .deleteNoteForm {
+          .delete-note {
+            @include card-background;
             float: right;
-            padding-right: 10px;
+            padding: 1px;
+            margin-right: 10px;
+            color: $white;
           }
         }
       }
