@@ -12,33 +12,35 @@ $(function() {
     var request = $.ajax({
       method: 'POST',
       data: newNote,
-      url: targetUrl
-    });
+      url: targetUrl,
+      success: function(data) {
+        var noteData = $(data);
+        var noteID = noteData.attr('id');
 
-    request.done(function() {
-      var html = '<li>' +
-          newNoteBody
-        '</li>';
+        var html = '<li class="note" id=note-' + noteID + '>' +
+            newNoteBody + '<a class="delete-note" id=' + noteID +
+            ' href="#">X</a>' + '</li>';
 
-      $('div.notes').prepend(html);
-      $('#note_body').val('');
+        $('div.notes').prepend(html);
+        $('#note_body').val('');
+      }
     });
   });
 
-  $(function() {
-    $('.button_to').click(function(event) {
-      event.preventDefault();
+  $('.delete-note').click(function(event) {
+    event.preventDefault();
 
-      var element = event.target;
-      var targetUrl = $(this).attr('action');
+    var vacationContainer = $('.vacation-container');
+    var vacationID = vacationContainer.attr('id');
+    var noteID = event.target.id;
+    var targetUrl = '/api/vacations/' + vacationID + '/notes/' + noteID;
 
-      $.ajax({
-        method: 'DELETE',
-        url: targetUrl,
-        dataType: "json"
-      }).done(function() {
-        $(element).parent().parent().remove();
-      });
+    $.ajax({
+      method: 'DELETE',
+      url: targetUrl,
+      dataType: 'json'
+    }).done(function() {
+      $("#note-"+noteID).remove();
     });
   });
 });

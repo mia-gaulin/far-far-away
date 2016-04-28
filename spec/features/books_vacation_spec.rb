@@ -67,4 +67,18 @@ feature "visitor sees details for a planet" do
 
     expect(page).to have_content "End date can't be before start date"
   end
+
+  scenario "cancels vacation" do
+    visit planets_path
+    click_link tatooine.name
+
+    fill_in "Name for Reservation", with: skywalker.vacationer
+    fill_in "Start Date", with: skywalker.start_date
+    fill_in "End Date", with: skywalker.end_date
+    fill_in "Number of People", with: skywalker.num_of_people
+    click_button "Submit"
+
+    click_button "Cancel Vacation"
+    expect(page).to have_content "Your vacation has been cancelled."
+  end
 end

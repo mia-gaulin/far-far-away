@@ -13,7 +13,6 @@
  *= require_self
  */
 
-// @import "bourbon";
 @import "modules/mixins";
 
 $orange: #f8b195;
@@ -133,4 +132,10 @@ h3 {
   margin: 0 auto;
   width: 90%;
   @import "components/show";
+}
+
+button,
+input[type=submit],
+input[type=type] {
+  @include card-background;
 }

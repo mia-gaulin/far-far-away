@@ -1,10 +1,10 @@
-<div class="show">
+<div class="show vacation-container" id="<%= @vacation.id %>">
   <h2><%= @vacation.vacationer %>'s <%= @vacation.planet.name %> Vacation</h2>
 
   <div class="vaca-top">
     <div class="details">
-      <b>Destination</b> <%= @vacation.planet.name %>
-      <b>Dates</b> <%= @vacation.start_date %> - <%= @vacation.end_date %>
+      <b>Destination</b> <%= @vacation.planet.name %> |
+      <b>Dates</b> <%= @vacation.start_date %> - <%= @vacation.end_date %> |
       <b>Number of people</b> <%= @vacation.num_of_people %>
       <div class="vacation-link">
         <%= link_to 'Edit', edit_vacation_path(@vacation) %>
@@ -12,26 +12,33 @@
       </div>
     </div>
     <div class="itinerary">
-      <h4>Notes</h4>
-      <div class="notes">
-        <% @notes.each do |n| %>
-          <li><%= n.body %><%= button_to "X", api_vacation_note_path(n.vacation.id, n.id), class:"button", :method => :delete %></li>
-        <% end %>
+      <div class="leftcolumn">
+        <div class="form">
+          <%= form_for [@vacation, @note], html: { id: :new_note } do |f| %>
+            <div>
+              <h4><%= f.label :body, 'Add note' %></h4>
+            </div>
+            <div class="field">
+              <%=f.text_area :body, :rows=>5, :cols=>40 %>
+              <%= f.hidden_field(:id, value: @note.id) %>
+            </div>
+            <div class="actions">
+              <%= f.submit 'Add' %>
+            </div>
+          <% end %>
+        </div>
       </div>
 
-      <div class="form">
-        <%= form_for [@vacation, @note], html: { id: :new_note } do |f| %>
-          <div class="field">
-            <b><%= f.label :body, 'Add note' %></b>
-          </div>
-          <div class="field">
-            <%=f.text_area :body %>
-            <%= f.hidden_field(:id, value: @note.id) %>
-          </div>
-          <div class="actions">
-            <%= f.submit 'Add' %>
-          </div>
-        <% end %>
+      <div class="rightcolumn">
+        <h4>Notes</h4>
+        <div class="notes">
+          <% @notes.each do |n| %>
+            <li class="note" id="note-<%= n.id %>">
+              <%= n.body %>
+              <%= link_to "X", "#", class: "delete-note", id: n.id %>
+            </li>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
@@ -45,7 +52,7 @@
     </div>
 
     <div class="rightcolumn">
-      <h4>STUFF</h4>
+      <h4>Inhabitants</h4>
     </div>
   </div>
 
@@ -56,11 +63,6 @@
 
     <div class="rightcolumn">
       <h4>Something else here</h4>
-      <% unless @bookings.empty? %>
-        <b>Bookings</b>
-        <% @bookings.each do |b| %>
-          <li><%= b.name %></li>
-        <% end %>
-      <% end %>
+      
     </div>
   </div>

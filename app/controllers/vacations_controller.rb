@@ -4,8 +4,6 @@ class VacationsController < ApplicationController
     @planet = @vacation.planet
     @landmarks = Landmark.where(planet: @planet)
     @events = Event.where(planet: @planet)
-    @booking = Booking.new
-    @bookings = @vacation.events
     @note = Note.new
     @notes = @vacation.notes.order(created_at: :desc)
   end
@@ -47,6 +45,12 @@ class VacationsController < ApplicationController
     flash[:notice] = "Your vacation has been cancelled."
     redirect_to planets_path
   end
+
+  # <%= button_to "X", api_vacation_note_path(n.vacation.id, n.id),
+  #  class:"deleteNoteButton",
+  # :method => :delete,
+  # :form_class => "deleteNoteForm",
+  # id: "#{n.id}" %>
 
   private
 
