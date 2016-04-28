@@ -52,17 +52,20 @@
     </div>
 
     <div class="rightcolumn">
-      <h4>Inhabitants</h4>
+      <h4>Inhabitants of <%= @vacation.planet.name %></h4>
     </div>
   </div>
 
   <div class="planet-info">
     <div class="leftcolumn">
-
+      <h4>Events on <%= @vacation.planet.name %></h4>
+      <% @events.each do |e| %>
+        <li><%= e.name %></li>
+      <% end %>
     </div>
 
     <div class="rightcolumn">
       <h4>Something else here</h4>
-      
+
     </div>
   </div>
