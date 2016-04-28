@@ -4,11 +4,7 @@ class NotesController < ApplicationController
     @vacation = @note.vacation
     if @note.save
       render json: @note
-      flash[:notice] = "Note saved!"
-    else
-      flash[:failure] = @note.errors.full_messages.join(". ")
     end
-    # redirect_to vacation_path(@vacation)
   end
 
   private
