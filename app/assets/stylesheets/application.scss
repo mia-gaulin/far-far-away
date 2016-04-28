@@ -93,8 +93,8 @@ h3 {
   @include card-background;
   @include flex-container-x(wrap);
   @include flex-container-y(nowrap);
-  padding: 10px;
   min-height: 175px;
+  padding: 10px;
   text-align: center;
 }
 
