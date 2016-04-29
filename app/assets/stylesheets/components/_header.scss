@@ -1,10 +1,6 @@
 header {
   @include flex-container-y(nowrap);
 
-  h1 {
-    font-size: 36pt;
-  }
-
   div.top-nav {
     @include flex-container-x(wrap);
     justify-content: space-between;
@@ -16,6 +12,7 @@ header {
       form {
         color: $white;
         padding-left: 16px;
+        text-shadow: 0 2px 4px rgba($black, 0.4);
       }
     }
 
@@ -41,9 +38,10 @@ header {
           display: block;
           padding: 14px 16px;
           text-decoration: none;
+          text-shadow: 0 2px 4px rgba($black, 0.4);
 
           &:hover {
-            background-color: $pink;
+            background-color: lighten(rgba($white, 0.3), 10%);
           }
         }
       }
