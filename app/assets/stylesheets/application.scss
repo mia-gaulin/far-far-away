@@ -26,6 +26,16 @@ $font-sans: "Copperplate", "Copperplate Gothic Light", sans-serif;
 // $box: rgba(70, 20, 25, 0.3);
 $white: #ffffff;
 $black: #000000;
+@font-face {
+  font-family: 'distant_galaxyregular';
+  src: font-url('DISTGRG_-webfont.eot');
+  src: font-url('DISTGRG_-webfont.eot?#iefix') format('embedded-opentype'),
+    font-url('DISTGRG_-webfont.ttf') format('truetype'),
+    font-url('DISTGRG_-webfont.svg#distant_galaxyregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+$header-font: 'distant_galaxyregular';
 
 html,
 body {
@@ -55,7 +65,11 @@ body {
 }
 
 h1 {
+  color: $white;
+  font-family: $header-font;
   font-size: 36pt;
+  padding-left: 18px;
+  text-shadow: 0 2px 4px rgba($black, 0.4);
 }
 
 h2 {
