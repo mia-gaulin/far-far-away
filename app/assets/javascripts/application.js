@@ -16,15 +16,4 @@
 
 $(document).ready(function() {
 
-  $(function() {
-    $('#searchBar').hide();
-    $('#searchToggle').show();
-
-    $('#searchToggle').click(function(event){
-      event.preventDefault();
-      $('#searchBar').show(500);
-      $('#searchButton').remove();
-      $(this).remove();
-    });
-  });
 });
